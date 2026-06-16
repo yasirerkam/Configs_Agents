@@ -15,6 +15,7 @@
       "model": "opencode-go/qwen3.7-plus",
       // "model": "opencode-go/deepseek-v4-pro",
       // "model": "opencode-go/mimo-v2.5-pro",
+      // "model": "opencode-go/kimi-k2.6",
       "prompt": "{file:./prompts/Software_Engineering_Principles.md}",
       "permission": {
         "edit": "deny",
@@ -27,6 +28,7 @@
       "model": "opencode-go/qwen3.7-plus",
       // "model": "opencode-go/deepseek-v4-pro",
       // "model": "opencode-go/mimo-v2.5-pro",
+      // "model": "opencode-go/kimi-k2.6",
       "prompt": "{file:./prompts/code_reviewer.md}",
       "permission": {
         "edit": "deny"
