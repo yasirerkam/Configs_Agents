@@ -1,38 +1,26 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "./prompts/Software_Engineering_Principles.md"
+  ],
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-pro",
-      "prompt": "{file:./prompts/Software_Engineering_Principles.md}",
-      "permission": {
-        "edit": "allow",
-        "bash": "allow"
-      }
+      "model": "opencode-go/deepseek-v4-pro"
     },
     "plan": {
       "mode": "primary",
-      "model": "opencode-go/qwen3.7-plus",
-      // "model": "opencode-go/deepseek-v4-pro",
-      // "model": "opencode-go/mimo-v2.5-pro",
-      // "model": "opencode-go/kimi-k2.6",
-      "prompt": "{file:./prompts/Software_Engineering_Principles.md}",
-      "permission": {
-        "edit": "deny",
-        "bash": "deny"
-      }
+      "model": "opencode-go/qwen3.7-plus"
+      // "model": "opencode-go/deepseek-v4-pro"
+      // "model": "opencode-go/mimo-v2.5-pro"
+      // "model": "opencode-go/kimi-k2.6"
     },
     "code-reviewer": {
-      "description": "Reviews code for best practices and potential issues",
       "mode": "subagent",
-      "model": "opencode-go/qwen3.7-plus",
-      // "model": "opencode-go/deepseek-v4-pro",
-      // "model": "opencode-go/mimo-v2.5-pro",
-      // "model": "opencode-go/kimi-k2.6",
-      "prompt": "{file:./prompts/code_reviewer.md}",
-      "permission": {
-        "edit": "deny"
-      }
+      "model": "opencode-go/qwen3.7-plus"
+      // "model": "opencode-go/deepseek-v4-pro"
+      // "model": "opencode-go/mimo-v2.5-pro"
+      // "model": "opencode-go/kimi-k2.6"
     }
   }
 }
