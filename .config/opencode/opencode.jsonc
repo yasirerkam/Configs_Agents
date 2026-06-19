@@ -15,12 +15,35 @@
       // "model": "opencode-go/mimo-v2.5-pro"
       // "model": "opencode-go/kimi-k2.6"
     },
+    "explore": {
+      "mode": "subagent",
+      "model": "opencode-go/mimo-v2.5"
+      // "model": "opencode-go/deepseek-v4-flash"
+    },
     "code-reviewer": {
+      "description": "Reviews code for quality, performance, maintainability, and security best practices.",
       "mode": "subagent",
       "model": "opencode-go/qwen3.7-plus"
       // "model": "opencode-go/deepseek-v4-pro"
       // "model": "opencode-go/mimo-v2.5-pro"
       // "model": "opencode-go/kimi-k2.6"
+    },
+    "committer": {
+      "description": "Analyzes file changes and automatically generates standardized Git commit messages.",
+      "mode": "subagent",
+      "model": "opencode-go/mimo-v2.5",
+      // "model": "opencode-go/deepseek-v4-flash",
+      "prompt": "You are a Git commit agent. 1. Run `git status` to see files. 2. Run `git diff` to understand changes. 3. Run `git add` for the intended files. 4. Run `git commit` using the Conventional Commits specification. DO NOT attempt to write code, edit files, or push to a remote repository.",
+      "permission": {
+        "edit": "deny",
+        "bash": {
+          "*": "deny",
+          "git status*": "allow",
+          "git diff*": "allow",
+          "git add *": "allow",
+          "git commit *": "allow"
+        }
+      }
     }
   }
 }
