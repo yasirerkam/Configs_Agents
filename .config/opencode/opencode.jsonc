@@ -35,11 +35,11 @@
       // "model": "opencode-go/minimax-m3"
     },
     "committer": {
-      "description": "Analyzes file changes and automatically generates standardized Git commit messages.",
+      "description": "Analyzes file changes and automatically generates detailed, standardized Git commit messages.",
       "mode": "subagent",
       "model": "opencode-go/mimo-v2.5",
-      // "model": "opencode-go/deepseek-v4-flash",
-      "prompt": "You are a Git commit agent. 1. Run `git status` to see files. 2. Run `git diff` to understand changes. 3. Run `git add` for the intended files. 4. Run `git commit` using the Conventional Commits specification. DO NOT attempt to write code, edit files, or push to a remote repository.",
+      "steps": 4,
+      "prompt": "You are an expert Git commit agent. Workflow: 1. `git status` 2. `git diff` 3. `git add <files>` 4. `git commit`. CRITICAL RULES FOR COMMIT MESSAGE: You MUST use the Conventional Commits specification. DO NOT be lazy; write detailed messages. You MUST use multiple `-m` flags to bypass bash escaping issues. Example: `git commit -m \"feat(auth): add jwt validation\" -m \"- Implemented JWT logic in middleware. - Fixed token expiration bug. This ensures secure sessions.\"` The first `-m` is the Subject (<type>(<scope>): <short description>). The second `-m` is the Body, which MUST explain WHY the change was made and list specific changes using bullet points. CONSTRAINTS: DO NOT edit files, write code, or git push.",
       "permission": {
         "edit": "deny",
         "bash": {
