@@ -6,14 +6,19 @@
   "agent": {
     "build": {
       "mode": "primary",
+      // "model": "opencode-go/qwen3.7-plus"
       "model": "opencode-go/deepseek-v4-pro"
+      // "model": "opencode-go/mimo-v2.5-pro"
+      // "model": "opencode-go/kimi-k2.6"
+      // "model": "opencode-go/minimax-m3"
     },
     "plan": {
       "mode": "primary",
-      "model": "opencode-go/qwen3.7-plus"
+      // "model": "opencode-go/qwen3.7-plus"
       // "model": "opencode-go/deepseek-v4-pro"
       // "model": "opencode-go/mimo-v2.5-pro"
       // "model": "opencode-go/kimi-k2.6"
+      "model": "opencode-go/minimax-m3"
     },
     "explore": {
       "mode": "subagent",
@@ -27,6 +32,7 @@
       // "model": "opencode-go/deepseek-v4-pro"
       // "model": "opencode-go/mimo-v2.5-pro"
       // "model": "opencode-go/kimi-k2.6"
+      // "model": "opencode-go/minimax-m3"
     },
     "committer": {
       "description": "Analyzes file changes and automatically generates standardized Git commit messages.",
