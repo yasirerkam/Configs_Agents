@@ -21,10 +21,9 @@ TARGET_MODELS = [
     "qwen3.7-pro",
     "glm-5.2",
     "glm-5.1",
-    "kimi",
-    "kimi",
-    "kimi",
-    "kimi",
+    "mimo-v2.5-pro",
+    "mimo-v2.5",
+    "minimax-m3",
 ]
 API_URL = "https://g4f.space/v1/models"
 

@@ -9,6 +9,9 @@
     "srv_mkombumpae45db46dcb8:z-ai/glm-5.1": {
       "name": "nvidia.com:z-ai/glm-5.1"
     },
+    "srv_mkombumpae45db46dcb8:minimaxai/minimax-m3": {
+      "name": "nvidia.com:minimaxai/minimax-m3"
+    },
     "srv_mp2i8rco3148dd85bec1:glm-5.2": {
       "name": "ollama.pro:glm-5.2"
     },
@@ -51,35 +54,17 @@
     "srv_mpsmwmt5fa6174293958:deepseek-v4-flash-thinking": {
       "name": "crowllm.com:deepseek-v4-flash-thinking"
     },
-    "srv_mp5miql908c8738d71be:kimi": {
-      "name": "gen.pollinations.ai:kimi"
-    },
-    "srv_mkoloq41e34074b6133e:kimi": {
-      "name": "nectar by pollinations.ai:kimi"
-    },
     "srv_mp2i8rco3148dd85bec1:kimi-k2.7-code": {
       "name": "ollama.pro:kimi-k2.7-code"
     },
     "srv_mpq6idkk49907f3c4a5b:qwen3.7-max": {
       "name": "qwen:qwen3.7-max"
     },
-    "srv_mp1v9cyha31b95fa8c9a:moonshotai/kimi-k2.5": {
-      "name": "KTAI - Free - Models  (https://discord.gg/n6B5KCN3ZV):moonshotai/kimi-k2.5"
-    },
-    "srv_mkoloq41e34074b6133e:kimi-thinking": {
-      "name": "nectar by pollinations.ai:kimi-thinking"
-    },
-    "srv_mp2i8rco3148dd85bec1:kimi-k2.5": {
-      "name": "ollama.pro:kimi-k2.5"
-    },
     "srv_mp2i8rco3148dd85bec1:glm-5.1": {
       "name": "ollama.pro:glm-5.1"
     },
     "srv_mp2i8rco3148dd85bec1:kimi-k2.6": {
       "name": "ollama.pro:kimi-k2.6"
-    },
-    "srv_mn1y956u9e6cfd0c1b4b:kimi": {
-      "name": "Pollinations AI:kimi"
     },
     "srv_mp2i8rco3148dd85bec1:deepseek-v4-flash": {
       "name": "ollama.pro:deepseek-v4-flash"
