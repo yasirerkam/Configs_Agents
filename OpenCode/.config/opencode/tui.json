@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "$schema": "https://opencode.ai/tui.json",
   "keybinds": {
     "command_list": "ctrl+o"
@@ -7,3 +8,10 @@
     "oh-my-openagent@latest"
   ]
 }
+=======
+    "$schema": "https://opencode.ai/tui.json",
+    "keybinds": {
+        "command_list": "ctrl+o"
+    }
+}
+>>>>>>> 2b9c682 (restruct)

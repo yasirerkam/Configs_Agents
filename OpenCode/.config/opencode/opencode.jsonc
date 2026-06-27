@@ -134,9 +134,13 @@
         }
       }
     }
+<<<<<<< HEAD
   },
   "plugin": [
     "@mohak34/opencode-notifier@latest",
     "oh-my-openagent@latest"
   ]
+=======
+  }
+>>>>>>> 2b9c682 (restruct)
 }
