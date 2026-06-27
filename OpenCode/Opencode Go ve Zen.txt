@@ -28,4 +28,9 @@ opencode zen free (mümkünse verilen sırayla):
 MiMo-V2.5 Free
 DeepSeek V4 Flash Free
 Nemotron 3 Ultra Free
+<<<<<<< HEAD
 North Mini Code Free
+=======
+North Mini Code Free
+Big Pickle
+>>>>>>> be3051a (models)
