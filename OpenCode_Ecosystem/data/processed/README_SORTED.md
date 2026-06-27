@@ -116,29 +116,6 @@
 </details>
 
 <details>
-  <summary><b>FlowDeck</b> <img src="https://badgen.net/github/stars/DVNghiem/FlowDeck" height="14"/> - <i>AI-powered multi-agent workflow orchestration with built-in safety intelligence</i></summary>
-  <blockquote>
-    FlowDeck adds a structured, multi-agent development workflow to OpenCode. It coordinates 25 specialist agents through a four-phase cycle — discuss, plan, execute, review — with persistent state that survives session restarts.
-
-Key features:
-- 25 specialist agents (architect, planner, coder, reviewer, tester, debugger, risk-analyst, policy-enforcer, and more)
-- 24 reusable workflow skills (TDD, security scan, deploy check, code review, and more)
-- 17 workflow commands for all project operations
-- 15 pre-built orchestration flows including Spec-Driven Development (SDD)
-- Persistent state via `.planning/STATE.md` — resume exactly where you left off
-- Wave-based parallel execution for independent tasks
-- AI Safety layer: patch trust scoring, edit gates, phase gating, arch constraint enforcement, failure replay, and regression prediction
-- Deep System Hooks: context monitoring, session idle summaries, shell environment injection
-- Built-in MCPs: Context7 (docs), Exa (web search), Grep.app (code search)
-- Ensemble Reasoning via `/fd-council` for synthesized consensus from multiple agents
-- Persistent Memory with SQLite for tool executions and session summaries
-
-    <br><br>
-    <a href="https://github.com/DVNghiem/FlowDeck">🔗 <b>View Repository</b></a>
-  </blockquote>
-</details>
-
-<details>
   <summary><b>Dynamic Context Pruning</b> <img src="https://badgen.net/github/stars/Tarquinen/opencode-dynamic-context-pruning" height="14"/> - <i>Optimize token usage</i></summary>
   <blockquote>
     Plugin that optimises token usage by pruning obsolete tool outputs from conversation context.
@@ -171,15 +148,6 @@ Key features:
     Authenticate the Opencode CLI with your Google account so you can use your existing Gemini plan.
     <br><br>
     <a href="https://github.com/jenslys/opencode-gemini-auth">🔗 <b>View Repository</b></a>
-  </blockquote>
-</details>
-
-<details>
-  <summary><b>Envsitter Guard</b> <img src="https://badgen.net/github/stars/boxpositron/envsitter-guard" height="14"/> - <i>Prevent .env leaks</i></summary>
-  <blockquote>
-    OpenCode plugin that prevents agents/tools from reading or editing sensitive .env* files, while still allowing safe inspection via EnvSitter (keys + deterministic fingerprints; never values).
-    <br><br>
-    <a href="https://github.com/boxpositron/envsitter-guard">🔗 <b>View Repository</b></a>
   </blockquote>
 </details>
 
@@ -509,6 +477,15 @@ Key features:
 </details>
 
 <details>
+  <summary><b>Envsitter Guard</b> <img src="https://badgen.net/github/stars/boxpositron/envsitter-guard" height="14"/> - <i>Prevent .env leaks</i></summary>
+  <blockquote>
+    OpenCode plugin that prevents agents/tools from reading or editing sensitive .env* files, while still allowing safe inspection via EnvSitter (keys + deterministic fingerprints; never values).
+    <br><br>
+    <a href="https://github.com/boxpositron/envsitter-guard">🔗 <b>View Repository</b></a>
+  </blockquote>
+</details>
+
+<details>
   <summary><b>Opencode Models Discovery</b> <img src="https://badgen.net/github/stars/yuhp/opencode-models-discovery" height="14"/> - <i>Configurable model discovery and filtering without long manual config</i></summary>
   <blockquote>
     OpenCode plugin for discovering models from OpenAI-compatible providers and API gateways, with provider and model filtering so users can avoid maintaining large configs or loading every model at once.
@@ -829,6 +806,29 @@ sync and targeted validation checks, and helps keep repo knowledge branch-local 
     OpenCode plugin that lets agents actively adjust model reasoning effort during a session, with configurable system guidance and a tool for switching between valid reasoning-effort variants.
     <br><br>
     <a href="https://github.com/ian-pascoe/opencode-adaptive-thinking">🔗 <b>View Repository</b></a>
+  </blockquote>
+</details>
+
+<details>
+  <summary><b>FlowDeck</b> <img src="https://badgen.net/github/stars/DVNghiem/FlowDeck" height="14"/> - <i>AI-powered multi-agent workflow orchestration with built-in safety intelligence</i></summary>
+  <blockquote>
+    FlowDeck adds a structured, multi-agent development workflow to OpenCode. It coordinates 25 specialist agents through a four-phase cycle — discuss, plan, execute, review — with persistent state that survives session restarts.
+
+Key features:
+- 25 specialist agents (architect, planner, coder, reviewer, tester, debugger, risk-analyst, policy-enforcer, and more)
+- 24 reusable workflow skills (TDD, security scan, deploy check, code review, and more)
+- 17 workflow commands for all project operations
+- 15 pre-built orchestration flows including Spec-Driven Development (SDD)
+- Persistent state via `.planning/STATE.md` — resume exactly where you left off
+- Wave-based parallel execution for independent tasks
+- AI Safety layer: patch trust scoring, edit gates, phase gating, arch constraint enforcement, failure replay, and regression prediction
+- Deep System Hooks: context monitoring, session idle summaries, shell environment injection
+- Built-in MCPs: Context7 (docs), Exa (web search), Grep.app (code search)
+- Ensemble Reasoning via `/fd-council` for synthesized consensus from multiple agents
+- Persistent Memory with SQLite for tool executions and session summaries
+
+    <br><br>
+    <a href="https://github.com/DVNghiem/FlowDeck">🔗 <b>View Repository</b></a>
   </blockquote>
 </details>
 
