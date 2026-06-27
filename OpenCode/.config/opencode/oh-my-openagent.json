@@ -1,31 +1,106 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
-  "model_fallback": true,
   "hashline_edit": true,
   "new_task_system_enabled": true,
+  "runtime_fallback": {
+    "enabled": true,
+    "retry_on_errors": [
+      400,
+      401,
+      403,
+      404,
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "max_fallback_attempts": 3,
+    "cooldown_seconds": 15,
+    "timeout_seconds": 10,
+    "notify_on_fallback": true,
+    "restore_primary_after_cooldown": true
+  },
   "agents": {
     "sisyphus": {
       "model": "opencode-go/kimi-k2.6",
       "fallback_models": [
         {
-          "model": "opencode-go/glm-5.1"
-        },
-        {
           "model": "opencode-go/qwen3.7-plus"
         },
         {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/kimi-k2.7-code"
+        },
+        {
           "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
     "hephaestus": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/kimi-k2.7-code",
       "fallback_models": [
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/kimi-k2.6"
+        },
         {
           "model": "opencode-go/qwen3.7-plus"
         },
         {
-          "model": "opencode-go/glm-5.1"
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
@@ -33,29 +108,74 @@
       "model": "opencode-go/qwen3.7-plus",
       "fallback_models": [
         {
+          "model": "opencode-go/kimi-k2.7-code"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
           "model": "opencode-go/kimi-k2.6"
         },
         {
-          "model": "opencode-go/glm-5.1"
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
     "librarian": {
-      "model": "opencode-go/qwen3.7-plus",
+      "model": "opencode-go/minimax-m3",
       "fallback_models": [
         {
-          "model": "opencode-go/minimax-m3"
+          "model": "opencode-go/kimi-k2.6"
         },
         {
-          "model": "opencode-go/minimax-m2.7"
+          "model": "opencode-go/mimo-v2.5"
         },
         {
           "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
     "explore": {
-      "model": "opencode-go/qwen3.7-plus",
+      "model": "opencode-go/mimo-v2.5",
       "fallback_models": [
         {
           "model": "opencode-go/deepseek-v4-flash"
@@ -64,7 +184,22 @@
           "model": "opencode-go/minimax-m3"
         },
         {
-          "model": "opencode-go/minimax-m2.7"
+          "model": "opencode-go/kimi-k2.6"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
@@ -75,129 +210,313 @@
           "model": "opencode-go/qwen3.7-plus"
         },
         {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
           "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
     "prometheus": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/deepseek-v4-pro",
       "fallback_models": [
         {
           "model": "opencode-go/qwen3.7-plus"
         },
         {
-          "model": "opencode-go/glm-5.1"
+          "model": "opencode-go/kimi-k2.7-code"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/kimi-k2.6"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
     "metis": {
-      "model": "opencode-go/glm-5.1",
+      "model": "opencode-go/qwen3.7-max",
       "fallback_models": [
+        {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/qwen3.7-plus"
+        },
+        {
+          "model": "opencode-go/kimi-k2.7-code"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
         {
           "model": "opencode-go/kimi-k2.6"
         },
         {
-          "model": "opencode-go/qwen3.7-plus"
+          "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
     "momus": {
-      "model": "opencode-go/qwen3.7-plus",
+      "model": "opencode-go/qwen3.7-max",
+      "fallback_models": [
+        {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/qwen3.7-plus"
+        },
+        {
+          "model": "opencode-go/kimi-k2.7-code"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/kimi-k2.6"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
+        }
+      ]
+    },
+    "atlas": {
+      "model": "opencode-go/mimo-v2.5-pro",
       "fallback_models": [
         {
           "model": "opencode-go/kimi-k2.6"
         },
         {
-          "model": "opencode-go/glm-5.1"
-        }
-      ]
-    },
-    "atlas": {
-      "model": "opencode-go/kimi-k2.6",
-      "fallback_models": [
-        {
           "model": "opencode-go/qwen3.7-plus"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/kimi-k2.7-code"
         },
         {
           "model": "opencode-go/minimax-m3"
         },
         {
-          "model": "opencode-go/minimax-m2.7"
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
     "sisyphus-junior": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/minimax-m3",
       "fallback_models": [
         {
-          "model": "opencode-go/qwen3.7-plus"
+          "model": "opencode-go/kimi-k2.6"
         },
         {
-          "model": "opencode-go/glm-5.1"
+          "model": "opencode-go/mimo-v2.5"
         },
         {
-          "model": "opencode-go/minimax-m3"
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/mimo-v2.5-pro",
       "fallback_models": [
+        {
+          "model": "opencode-go/kimi-k2.6"
+        },
         {
           "model": "opencode-go/qwen3.7-plus"
         },
         {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
           "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
         }
       ]
     },
     "ultrabrain": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/qwen3.7-max",
       "fallback_models": [
+        {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
         {
           "model": "opencode-go/qwen3.7-plus"
         },
         {
-          "model": "opencode-go/glm-5.1"
+          "model": "opencode-go/kimi-k2.7-code"
+        },
+        {
+          "model": "opencode-go/kimi-k2.6"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
         }
       ]
     },
     "deep": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/qwen3.7-plus",
       "fallback_models": [
         {
-          "model": "opencode-go/qwen3.7-plus"
+          "model": "opencode-go/kimi-k2.7-code"
         },
         {
-          "model": "opencode-go/glm-5.1"
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/kimi-k2.6"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
         }
       ]
     },
     "artistry": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/kimi-k2.7-code",
       "fallback_models": [
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/kimi-k2.6"
+        },
         {
           "model": "opencode-go/qwen3.7-plus"
         },
         {
-          "model": "opencode-go/glm-5.1"
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
         }
       ]
     },
     "quick": {
-      "model": "opencode-go/deepseek-v4-flash",
-      "fallback_models": [
-        {
-          "model": "opencode-go/minimax-m3"
-        },
-        {
-          "model": "opencode-go/minimax-m2.7"
-        }
-      ]
-    },
-    "unspecified-low": {
       "model": "opencode-go/mimo-v2.5",
       "fallback_models": [
         {
@@ -205,17 +524,70 @@
         },
         {
           "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/kimi-k2.6"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
+        }
+      ]
+    },
+    "unspecified-low": {
+      "model": "opencode-go/deepseek-v4-flash",
+      "fallback_models": [
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/kimi-k2.6"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode-go/nemotron-3-ultra-free"
+        },
+        {
+          "model": "opencode-go/north-mini-code-free"
+        },
+        {
+          "model": "opencode-go/big-pickle"
         }
       ]
     },
     "unspecified-high": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/deepseek-v4-pro",
       "fallback_models": [
         {
           "model": "opencode-go/qwen3.7-plus"
         },
         {
-          "model": "opencode-go/glm-5.1"
+          "model": "opencode-go/kimi-k2.7-code"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/kimi-k2.6"
         },
         {
           "model": "opencode-go/minimax-m3"
@@ -223,13 +595,16 @@
       ]
     },
     "writing": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/minimax-m3",
       "fallback_models": [
         {
-          "model": "opencode-go/qwen3.7-plus"
+          "model": "opencode-go/kimi-k2.6"
         },
         {
-          "model": "opencode-go/minimax-m3"
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
         }
       ]
     }
