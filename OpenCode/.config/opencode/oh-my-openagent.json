@@ -164,9 +164,6 @@
         },
         {
           "model": "opencode-go/north-mini-code-free"
-        },
-        {
-          "model": "opencode-go/big-pickle"
         }
       ]
     },
@@ -209,10 +206,13 @@
         },
         {
           "model": "opencode-go/north-mini-code-free"
+<<<<<<< HEAD
         },
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
@@ -288,10 +288,13 @@
         },
         {
           "model": "opencode-go/north-mini-code-free"
+<<<<<<< HEAD
         },
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
@@ -320,11 +323,19 @@
         },
         {
           "model": "opencode-go/north-mini-code-free"
+<<<<<<< HEAD
 =======
       "model": "opencode-go/qwen3.7-plus",
 =======
       "model": "opencode-go/minimax-m3",
 >>>>>>> e9dda9a (update)
+=======
+        }
+      ]
+    },
+    "explore": {
+      "model": "opencode-go/mimo-v2.5",
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
       "fallback_models": [
         {
           "model": "opencode-go/kimi-k2.6"
@@ -349,6 +360,7 @@
         },
         {
           "model": "opencode-go/north-mini-code-free"
+<<<<<<< HEAD
         },
         {
           "model": "opencode-go/big-pickle"
@@ -400,6 +412,8 @@
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
@@ -434,6 +448,7 @@
         {
           "model": "opencode-go/north-mini-code-free"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           "model": "opencode-go/minimax-m3"
 >>>>>>> 23aebb6 (oh-my-openagent)
@@ -442,6 +457,8 @@
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
@@ -493,6 +510,7 @@
         {
           "model": "opencode-go/north-mini-code-free"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           "model": "opencode-go/glm-5.1"
 >>>>>>> 23aebb6 (oh-my-openagent)
@@ -501,6 +519,8 @@
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
@@ -544,6 +564,7 @@
         },
         {
           "model": "opencode-go/north-mini-code-free"
+<<<<<<< HEAD
 =======
       "model": "opencode-go/glm-5.1",
 =======
@@ -593,6 +614,8 @@
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
@@ -639,12 +662,15 @@
         {
           "model": "opencode-go/north-mini-code-free"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       "model": "opencode-go/qwen3.7-plus",
 =======
         },
         {
           "model": "opencode-go/big-pickle"
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
@@ -698,6 +724,7 @@
         },
         {
           "model": "opencode-go/north-mini-code-free"
+<<<<<<< HEAD
 =======
       "model": "opencode-go/kimi-k2.6",
       "fallback_models": [
@@ -740,6 +767,8 @@
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
@@ -768,6 +797,7 @@
         },
         {
           "model": "opencode-go/north-mini-code-free"
+<<<<<<< HEAD
 =======
       "model": "opencode-go/kimi-k2.6",
 =======
@@ -802,6 +832,8 @@
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     }
@@ -1032,11 +1064,14 @@
         {
           "model": "opencode-go/north-mini-code-free"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         },
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
@@ -1064,6 +1099,7 @@
         {
           "model": "opencode-go/north-mini-code-free"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 23aebb6 (oh-my-openagent)
 =======
@@ -1071,6 +1107,8 @@
         {
           "model": "opencode-go/big-pickle"
 >>>>>>> e9dda9a (update)
+=======
+>>>>>>> 95f68ee (opencode-go/big-pickle removed)
         }
       ]
     },
