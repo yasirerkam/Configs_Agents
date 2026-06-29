@@ -1,0 +1,31 @@
+Çok yüksek düzey zeka gerektirecek ve çok az kullanılacak işler için aşağıdaki modelin:
+Qwen3.7 Max
+kullanılmasını istiyorum. Çünkü çok zeki ama token maliyeti çok yüksek.
+
+Yüksek düzey zeka gerektirecek ve az kullanılacak işler için aşağıdaki modellerin:
+DeepSeek V4 Pro
+Qwen3.7 Plus
+Kimi K2.7 Code
+MiMo-V2.5-Pro
+Kimi K2.6
+kullanılmasını istiyorum. Çünkü zekiler ama token maliyetleri yüksek.
+
+Orta düzey zeka gerektirecek ve çok kullanılacak işler için aşağıdaki modelin:
+MiniMax M3
+kullanılmasını istiyorum. Çünkü zeki ama token maliyeti orta.
+
+Az zeka gerektirecek ve çok fazla kullanılacak işler için aşağıdaki modellerin:
+MiMo-V2.5
+DeepSeek V4 Flash
+kullanılmasını istiyorum. Çünkü az zekiler ama token maliyetleri düşük.
+
+
+
+
+
+opencode zen free (mümkünse verilen sırayla):
+
+MiMo-V2.5 Free
+DeepSeek V4 Flash Free
+Nemotron 3 Ultra Free
+North Mini Code Free
