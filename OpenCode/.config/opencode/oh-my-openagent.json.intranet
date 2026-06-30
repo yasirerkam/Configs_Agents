@@ -1,0 +1,180 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "hashline_edit": true,
+  "new_task_system_enabled": true,
+  "runtime_fallback": {
+    "enabled": true,
+    "retry_on_errors": [
+      400,
+      401,
+      403,
+      404,
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "max_fallback_attempts": 3,
+    "cooldown_seconds": 15,
+    "timeout_seconds": 10,
+    "notify_on_fallback": true,
+    "restore_primary_after_cooldown": true
+  },
+  "agents": {
+    "sisyphus": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "hephaestus": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "oracle": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "librarian": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "explore": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "multimodal-looker": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "prometheus": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "metis": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "momus": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "atlas": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "sisyphus-junior": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "ultrabrain": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "deep": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "artistry": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "quick": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "unspecified-low": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "unspecified-high": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    },
+    "writing": {
+      "model": "LiteLLM-minimax/minimax",
+      "fallback_models": [
+  {
+    "model": "LiteLLM-supergemma4/supergemma4"
+  }
+]
+    }
+  }
+}
