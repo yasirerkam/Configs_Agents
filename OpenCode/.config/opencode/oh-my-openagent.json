@@ -15,7 +15,7 @@
       503,
       504
     ],
-    "max_fallback_attempts": 3,
+    "max_fallback_attempts": 1,
     "cooldown_seconds": 15,
     "timeout_seconds": 10,
     "notify_on_fallback": true,
