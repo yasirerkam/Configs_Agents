@@ -23,37 +23,8 @@
   },
   "agents": {
     "sisyphus": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "opencode-go/mimo-v2.5-pro",
       "fallback_models": [
-        {
-          "model": "opencode-go/deepseek-v4-pro"
-        },
-        {
-          "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/minimax-m3"
-        },
-        {
-          "model": "opencode-go/mimo-v2.5"
-        },
-        {
-          "model": "opencode-go/deepseek-v4-flash"
-        },
-        {
-          "model": "opencode-go/mimo-v2.5-free"
-        },
-        {
-          "model": "opencode-go/deepseek-v4-flash-free"
-        }
-      ]
-    },
-    "hephaestus": {
-      "model": "opencode-go/kimi-k2.7-code",
-      "fallback_models": [
-        {
-          "model": "opencode-go/mimo-v2.5-pro"
-        },
         {
           "model": "opencode-go/deepseek-v4-pro"
         },
@@ -74,87 +45,7 @@
         }
       ]
     },
-    "oracle": {
-      "model": "opencode-go/qwen3.7-plus",
-      "fallback_models": [
-        {
-          "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/deepseek-v4-pro"
-        },
-        {
-          "model": "opencode-go/minimax-m3"
-        },
-        {
-          "model": "opencode-go/mimo-v2.5"
-        },
-        {
-          "model": "opencode-go/deepseek-v4-flash"
-        },
-        {
-          "model": "opencode-go/mimo-v2.5-free"
-        },
-        {
-          "model": "opencode-go/deepseek-v4-flash-free"
-        }
-      ]
-    },
-    "librarian": {
-      "model": "opencode-go/minimax-m3",
-      "fallback_models": [
-        {
-          "model": "opencode-go/mimo-v2.5"
-        },
-        {
-          "model": "opencode-go/deepseek-v4-flash"
-        },
-        {
-          "model": "opencode-go/mimo-v2.5-free"
-        },
-        {
-          "model": "opencode-go/deepseek-v4-flash-free"
-        }
-      ]
-    },
-    "explore": {
-      "model": "opencode-go/mimo-v2.5",
-      "fallback_models": [
-        {
-          "model": "opencode-go/deepseek-v4-flash"
-        },
-        {
-          "model": "opencode-go/minimax-m3"
-        },
-        {
-          "model": "opencode-go/mimo-v2.5-free"
-        },
-        {
-          "model": "opencode-go/deepseek-v4-flash-free"
-        }
-      ]
-    },
-    "multimodal-looker": {
-      "model": "opencode-go/kimi-k2.6",
-      "fallback_models": [
-        {
-          "model": "opencode-go/deepseek-v4-pro"
-        },
-        {
-          "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/minimax-m3"
-        },
-        {
-          "model": "opencode-go/mimo-v2.5-free"
-        },
-        {
-          "model": "opencode-go/deepseek-v4-flash-free"
-        }
-      ]
-    },
-    "prometheus": {
+    "hephaestus": {
       "model": "opencode-go/deepseek-v4-pro",
       "fallback_models": [
         {
@@ -177,12 +68,106 @@
         }
       ]
     },
-    "metis": {
-      "model": "opencode-go/qwen3.7-max",
+    "oracle": {
+      "model": "opencode-go/glm-5.2",
       "fallback_models": [
         {
           "model": "opencode-go/deepseek-v4-pro"
         },
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        }
+      ]
+    },
+    "librarian": {
+      "model": "opencode-go/mimo-v2.5",
+      "fallback_models": [
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        }
+      ]
+    },
+    "explore": {
+      "model": "opencode-go/deepseek-v4-flash",
+      "fallback_models": [
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        }
+      ]
+    },
+    "multimodal-looker": {
+      "model": "opencode-go/mimo-v2.5-pro",
+      "fallback_models": [
+        {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        }
+      ]
+    },
+    "prometheus": {
+      "model": "opencode-go/glm-5.2",
+      "fallback_models": [
+        {
+          "model": "opencode-go/deepseek-v4-pro"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        }
+      ]
+    },
+    "metis": {
+      "model": "opencode-go/deepseek-v4-pro",
+      "fallback_models": [
         {
           "model": "opencode-go/mimo-v2.5-pro"
         },
@@ -204,11 +189,8 @@
       ]
     },
     "momus": {
-      "model": "opencode-go/qwen3.7-max",
+      "model": "opencode-go/deepseek-v4-pro",
       "fallback_models": [
-        {
-          "model": "opencode-go/deepseek-v4-pro"
-        },
         {
           "model": "opencode-go/mimo-v2.5-pro"
         },
@@ -230,13 +212,13 @@
       ]
     },
     "atlas": {
-      "model": "opencode-go/mimo-v2.5-pro",
+      "model": "opencode-go/minimax-m3",
       "fallback_models": [
         {
-          "model": "opencode-go/deepseek-v4-pro"
+          "model": "opencode-go/mimo-v2.5-pro"
         },
         {
-          "model": "opencode-go/minimax-m3"
+          "model": "opencode-go/deepseek-v4-pro"
         },
         {
           "model": "opencode-go/mimo-v2.5"
@@ -282,45 +264,84 @@
         },
         {
           "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
         }
       ]
     },
     "ultrabrain": {
-      "model": "opencode-go/qwen3.7-max",
+      "model": "opencode-go/glm-5.2",
       "fallback_models": [
         {
           "model": "opencode-go/deepseek-v4-pro"
         },
         {
-          "model": "opencode-go/minimax-m3"
+          "model": "opencode-go/mimo-v2.5-pro"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
         }
       ]
     },
     "deep": {
-      "model": "opencode-go/qwen3.7-plus",
+      "model": "opencode-go/glm-5.2",
       "fallback_models": [
-        {
-          "model": "opencode-go/mimo-v2.5-pro"
-        },
         {
           "model": "opencode-go/deepseek-v4-pro"
         },
         {
           "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
         }
       ]
     },
     "artistry": {
-      "model": "opencode-go/kimi-k2.7-code",
+      "model": "opencode-go/deepseek-v4-pro",
       "fallback_models": [
         {
           "model": "opencode-go/mimo-v2.5-pro"
         },
         {
-          "model": "opencode-go/deepseek-v4-pro"
+          "model": "opencode-go/minimax-m3"
         },
         {
-          "model": "opencode-go/minimax-m3"
+          "model": "opencode-go/mimo-v2.5"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
         }
       ]
     },
@@ -329,9 +350,6 @@
       "fallback_models": [
         {
           "model": "opencode-go/deepseek-v4-flash"
-        },
-        {
-          "model": "opencode-go/minimax-m3"
         },
         {
           "model": "opencode-go/mimo-v2.5-free"
@@ -346,9 +364,6 @@
       "fallback_models": [
         {
           "model": "opencode-go/mimo-v2.5"
-        },
-        {
-          "model": "opencode-go/minimax-m3"
         },
         {
           "model": "opencode-go/mimo-v2.5-free"
@@ -366,17 +381,35 @@
         },
         {
           "model": "opencode-go/minimax-m3"
-        }
-      ]
-    },
-    "writing": {
-      "model": "opencode-go/minimax-m3",
-      "fallback_models": [
+        },
         {
           "model": "opencode-go/mimo-v2.5"
         },
         {
           "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
+        }
+      ]
+    },
+    "writing": {
+      "model": "opencode-go/mimo-v2.5",
+      "fallback_models": [
+        {
+          "model": "opencode-go/minimax-m3"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash"
+        },
+        {
+          "model": "opencode-go/mimo-v2.5-free"
+        },
+        {
+          "model": "opencode-go/deepseek-v4-flash-free"
         }
       ]
     }
