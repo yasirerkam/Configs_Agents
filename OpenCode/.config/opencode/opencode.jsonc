@@ -87,18 +87,14 @@
   "agent": {
     "build": {
       "mode": "primary",
-      // "model": "opencode-go/qwen3.7-plus"
-      // "model": "opencode-go/deepseek-v4-pro"
+      "model": "opencode-go/deepseek-v4-pro"
       // "model": "opencode-go/mimo-v2.5-pro"
-      // "model": "opencode-go/kimi-k2.6"
-      "model": "opencode-go/minimax-m3"
+      // "model": "opencode-go/minimax-m3"
     },
     "plan": {
       "mode": "primary",
-      "model": "opencode-go/qwen3.7-plus"
       // "model": "opencode-go/deepseek-v4-pro"
-      // "model": "opencode-go/mimo-v2.5-pro"
-      // "model": "opencode-go/kimi-k2.6"
+      "model": "opencode-go/mimo-v2.5-pro"
       // "model": "opencode-go/minimax-m3"
     },
     "explore": {
@@ -109,10 +105,8 @@
     "code-reviewer": {
       "description": "Reviews code for quality, performance, maintainability, and security best practices.",
       "mode": "subagent",
-      // "model": "opencode-go/qwen3.7-plus",
       // "model": "opencode-go/deepseek-v4-pro",
       "model": "opencode-go/mimo-v2.5-pro",
-      // "model": "opencode-go/kimi-k2.6",
       // "model": "opencode-go/minimax-m3",
       "prompt": "{file:./prompts/code_reviewer.md}"
     },

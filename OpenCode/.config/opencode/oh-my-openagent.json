@@ -26,13 +26,7 @@
       "model": "opencode-go/kimi-k2.6",
       "fallback_models": [
         {
-          "model": "opencode-go/qwen3.7-plus"
-        },
-        {
           "model": "opencode-go/deepseek-v4-pro"
-        },
-        {
-          "model": "opencode-go/kimi-k2.7-code"
         },
         {
           "model": "opencode-go/mimo-v2.5-pro"
@@ -51,12 +45,6 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
@@ -67,12 +55,6 @@
           "model": "opencode-go/mimo-v2.5-pro"
         },
         {
-          "model": "opencode-go/kimi-k2.6"
-        },
-        {
-          "model": "opencode-go/qwen3.7-plus"
-        },
-        {
           "model": "opencode-go/deepseek-v4-pro"
         },
         {
@@ -89,12 +71,6 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
@@ -102,13 +78,7 @@
       "model": "opencode-go/qwen3.7-plus",
       "fallback_models": [
         {
-          "model": "opencode-go/kimi-k2.7-code"
-        },
-        {
           "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/kimi-k2.6"
         },
         {
           "model": "opencode-go/deepseek-v4-pro"
@@ -127,21 +97,12 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
     "librarian": {
       "model": "opencode-go/minimax-m3",
       "fallback_models": [
-        {
-          "model": "opencode-go/kimi-k2.6"
-        },
         {
           "model": "opencode-go/mimo-v2.5"
         },
@@ -153,12 +114,6 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
@@ -172,28 +127,16 @@
           "model": "opencode-go/minimax-m3"
         },
         {
-          "model": "opencode-go/kimi-k2.6"
-        },
-        {
           "model": "opencode-go/mimo-v2.5-free"
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
     "multimodal-looker": {
       "model": "opencode-go/kimi-k2.6",
       "fallback_models": [
-        {
-          "model": "opencode-go/qwen3.7-plus"
-        },
         {
           "model": "opencode-go/deepseek-v4-pro"
         },
@@ -208,12 +151,6 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
@@ -221,16 +158,7 @@
       "model": "opencode-go/deepseek-v4-pro",
       "fallback_models": [
         {
-          "model": "opencode-go/qwen3.7-plus"
-        },
-        {
-          "model": "opencode-go/kimi-k2.7-code"
-        },
-        {
           "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/kimi-k2.6"
         },
         {
           "model": "opencode-go/minimax-m3"
@@ -246,12 +174,6 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
@@ -262,16 +184,7 @@
           "model": "opencode-go/deepseek-v4-pro"
         },
         {
-          "model": "opencode-go/qwen3.7-plus"
-        },
-        {
-          "model": "opencode-go/kimi-k2.7-code"
-        },
-        {
           "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/kimi-k2.6"
         },
         {
           "model": "opencode-go/minimax-m3"
@@ -287,12 +200,6 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
@@ -303,16 +210,7 @@
           "model": "opencode-go/deepseek-v4-pro"
         },
         {
-          "model": "opencode-go/qwen3.7-plus"
-        },
-        {
-          "model": "opencode-go/kimi-k2.7-code"
-        },
-        {
           "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/kimi-k2.6"
         },
         {
           "model": "opencode-go/minimax-m3"
@@ -328,12 +226,6 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
@@ -341,16 +233,7 @@
       "model": "opencode-go/mimo-v2.5-pro",
       "fallback_models": [
         {
-          "model": "opencode-go/kimi-k2.6"
-        },
-        {
-          "model": "opencode-go/qwen3.7-plus"
-        },
-        {
           "model": "opencode-go/deepseek-v4-pro"
-        },
-        {
-          "model": "opencode-go/kimi-k2.7-code"
         },
         {
           "model": "opencode-go/minimax-m3"
@@ -366,21 +249,12 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
     "sisyphus-junior": {
       "model": "opencode-go/minimax-m3",
       "fallback_models": [
-        {
-          "model": "opencode-go/kimi-k2.6"
-        },
         {
           "model": "opencode-go/mimo-v2.5"
         },
@@ -392,12 +266,6 @@
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     }
@@ -406,12 +274,6 @@
     "visual-engineering": {
       "model": "opencode-go/mimo-v2.5-pro",
       "fallback_models": [
-        {
-          "model": "opencode-go/kimi-k2.6"
-        },
-        {
-          "model": "opencode-go/qwen3.7-plus"
-        },
         {
           "model": "opencode-go/deepseek-v4-pro"
         },
@@ -430,15 +292,6 @@
           "model": "opencode-go/deepseek-v4-pro"
         },
         {
-          "model": "opencode-go/qwen3.7-plus"
-        },
-        {
-          "model": "opencode-go/kimi-k2.7-code"
-        },
-        {
-          "model": "opencode-go/kimi-k2.6"
-        },
-        {
           "model": "opencode-go/minimax-m3"
         }
       ]
@@ -447,13 +300,7 @@
       "model": "opencode-go/qwen3.7-plus",
       "fallback_models": [
         {
-          "model": "opencode-go/kimi-k2.7-code"
-        },
-        {
           "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/kimi-k2.6"
         },
         {
           "model": "opencode-go/deepseek-v4-pro"
@@ -468,12 +315,6 @@
       "fallback_models": [
         {
           "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/kimi-k2.6"
-        },
-        {
-          "model": "opencode-go/qwen3.7-plus"
         },
         {
           "model": "opencode-go/deepseek-v4-pro"
@@ -493,19 +334,10 @@
           "model": "opencode-go/minimax-m3"
         },
         {
-          "model": "opencode-go/kimi-k2.6"
-        },
-        {
           "model": "opencode-go/mimo-v2.5-free"
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
@@ -519,19 +351,10 @@
           "model": "opencode-go/minimax-m3"
         },
         {
-          "model": "opencode-go/kimi-k2.6"
-        },
-        {
           "model": "opencode-go/mimo-v2.5-free"
         },
         {
           "model": "opencode-go/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode-go/nemotron-3-ultra-free"
-        },
-        {
-          "model": "opencode-go/north-mini-code-free"
         }
       ]
     },
@@ -539,16 +362,7 @@
       "model": "opencode-go/deepseek-v4-pro",
       "fallback_models": [
         {
-          "model": "opencode-go/qwen3.7-plus"
-        },
-        {
-          "model": "opencode-go/kimi-k2.7-code"
-        },
-        {
           "model": "opencode-go/mimo-v2.5-pro"
-        },
-        {
-          "model": "opencode-go/kimi-k2.6"
         },
         {
           "model": "opencode-go/minimax-m3"
@@ -558,9 +372,6 @@
     "writing": {
       "model": "opencode-go/minimax-m3",
       "fallback_models": [
-        {
-          "model": "opencode-go/kimi-k2.6"
-        },
         {
           "model": "opencode-go/mimo-v2.5"
         },
