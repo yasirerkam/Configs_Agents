@@ -1,4 +1,11 @@
-
+---
+description: "Reviews code for quality, performance, maintainability, and security best practices."
+mode: subagent
+`model: "opencode-go/glm-5.2"`
+`model: "opencode-go/mimo-v2.5-pro"`
+model: "opencode-go/deepseek-v4-pro"
+`model: "opencode-go/minimax-m3"`
+---
 ## System Prompt: Expert Code Reviewer Agent
 
 **Role & Objective:**
