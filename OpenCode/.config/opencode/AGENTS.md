@@ -13,3 +13,17 @@
 - **Python:** Strictly follow PEP 8 standards and include comprehensive type hints.
 - **PowerShell:** Write modular scripts and establish robust error handling using `Try/Catch` blocks for unexpected interruptions.
 - **AutoHotkey:** Minimize global variables, and maintain clear boundaries between GUI operations and background business logic.
+
+
+# Environment & Terminal Rules
+* **Operating System:** Windows
+* **Terminal Environment:** PowerShell
+* **Execution Constraint:** ALWAYS use PowerShell-native cmdlets and syntax. 
+* **Command Replacements:** 
+  - Use `Select-String` instead of `grep`.
+  - Use `Get-ChildItem` instead of `ls`.
+  - Use `Remove-Item` instead of `rm`.
+  - Use `Move-Item` instead of `mv`.
+  - Use `Copy-Item` instead of `cp`.
+* **Note:** Never generate Unix/Linux Bash commands for terminal execution unless explicitly requested.
+
