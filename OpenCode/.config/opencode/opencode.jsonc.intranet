@@ -1,59 +1,27 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "instructions": [
-    "./prompts/Software_Engineering_Principles.md"
-  ],
-  "provider": {
-  },
+  "provider": {},
   "agent": {
     "build": {
       "mode": "primary",
-      // "model": "opencode-go/qwen3.7-plus"
-      // "model": "opencode-go/deepseek-v4-pro"
+      "model": "opencode-go/deepseek-v4-pro"
       // "model": "opencode-go/mimo-v2.5-pro"
-      // "model": "opencode-go/kimi-k2.6"
-      "model": "opencode-go/minimax-m3"
+      // "model": "opencode-go/minimax-m3"
     },
     "plan": {
       "mode": "primary",
-      // "model": "opencode-go/qwen3.7-plus"
-      "model": "opencode-go/deepseek-v4-pro"
-      // "model": "opencode-go/mimo-v2.5-pro"
-      // "model": "opencode-go/kimi-k2.6"
+      // "model": "opencode-go/deepseek-v4-pro"
+      "model": "opencode-go/mimo-v2.5-pro"
       // "model": "opencode-go/minimax-m3"
     },
     "explore": {
       "mode": "subagent",
       "model": "opencode-go/mimo-v2.5"
       // "model": "opencode-go/deepseek-v4-flash"
-    },
-    "code-reviewer": {
-      "description": "Reviews code for quality, performance, maintainability, and security best practices.",
-      "mode": "subagent",
-      // "model": "opencode-go/qwen3.7-plus",
-      // "model": "opencode-go/deepseek-v4-pro",
-      "model": "opencode-go/mimo-v2.5-pro",
-      // "model": "opencode-go/kimi-k2.6",
-      // "model": "opencode-go/minimax-m3",
-      "prompt": "{file:./prompts/code_reviewer.md}"
-    },
-    "committer": {
-      "description": "Analyzes file changes and automatically generates detailed, standardized Git commit messages.",
-      "mode": "subagent",
-      "model": "opencode-go/mimo-v2.5",
-      // "model": "opencode-go/deepseek-v4-flash",
-      "steps": 20,
-      "prompt": "{file:./prompts/committer.md}",
-      "permission": {
-        "edit": "deny",
-        "bash": {
-          "*": "deny",
-          "git status*": "allow",
-          "git diff*": "allow",
-          "git add *": "allow",
-          "git commit *": "allow"
-        }
-      }
     }
-  }
+  },
+  "plugin": [
+    "@mohak34/opencode-notifier@latest",
+    "oh-my-openagent@latest"
+  ]
 }

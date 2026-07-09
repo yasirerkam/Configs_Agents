@@ -4,20 +4,33 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-pro"
-      // "model": "opencode-go/mimo-v2.5-pro"
-      // "model": "opencode-go/minimax-m3"
+      "model": "LiteLLM-glm-5.2/glm-5.2",
+      "fallback_models": [
+        {
+          "model": "OpenWebUI/glm-5.2"
+          //"model": "LiteLLM-supergemma4/supergemma4"
+        }
+      ]
     },
     "plan": {
       "mode": "primary",
-      // "model": "opencode-go/deepseek-v4-pro"
-      "model": "opencode-go/mimo-v2.5-pro"
-      // "model": "opencode-go/minimax-m3"
+      "model": "LiteLLM-glm-5.2/glm-5.2",
+      "fallback_models": [
+        {
+          "model": "OpenWebUI/glm-5.2"
+          //"model": "LiteLLM-supergemma4/supergemma4"
+        }
+      ]
     },
     "explore": {
       "mode": "subagent",
-      "model": "opencode-go/mimo-v2.5"
-      // "model": "opencode-go/deepseek-v4-flash"
+      "model": "LiteLLM-glm-5.2/glm-5.2",
+      "fallback_models": [
+        {
+          "model": "OpenWebUI/glm-5.2"
+          //"model": "LiteLLM-supergemma4/supergemma4"
+        }
+      ]
     }
   },
   "plugin": [

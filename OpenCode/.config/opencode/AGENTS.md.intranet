@@ -23,3 +23,17 @@
 * **Zero Internet Access:** You are operating within a strictly isolated internal network. Do not write scripts, commands, or code that attempt to reach the internet (e.g., `curl` to web URLs, external API calls).
 * **Anti-Hallucination & Documentation Request:** Do not generate responses based on memorization or guessing. If you are uncertain about how a specific framework, library, or software works, do not proceed. Explicitly state your uncertainty and ask the user to download the official documentation externally and provide it to you first.
 * **Dependency Request Protocol:** If a solution requires ANY external resource (e.g., `pip install`, external modules, or frameworks), do NOT provide standard installation commands. Instead, halt, provide an exact list of required package names/versions, and ask the user to download them from an external network and transfer them to the internal environment.
+
+
+# Environment & Terminal Rules
+* **Operating System:** Windows
+* **Terminal Environment:** PowerShell
+* **Execution Constraint:** ALWAYS use PowerShell-native cmdlets and syntax. 
+* **Command Replacements:** 
+  - Use `Select-String` instead of `grep`.
+  - Use `Get-ChildItem` instead of `ls`.
+  - Use `Remove-Item` instead of `rm`.
+  - Use `Move-Item` instead of `mv`.
+  - Use `Copy-Item` instead of `cp`.
+* **Note:** Never generate Unix/Linux Bash commands for terminal execution unless explicitly requested.
+
