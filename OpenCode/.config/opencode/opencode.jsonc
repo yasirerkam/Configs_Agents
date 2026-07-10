@@ -23,5 +23,14 @@
   "plugin": [
     "@mohak34/opencode-notifier@latest",
     "oh-my-openagent@latest"
-  ]
+  ],
+  "mcp": {
+    "codebase-memory-mcp": {
+      "type": "local",
+      "command": [
+        "codebase-memory-mcp.exe"
+      ],
+      "enabled": true
+    }
+  }
 }
