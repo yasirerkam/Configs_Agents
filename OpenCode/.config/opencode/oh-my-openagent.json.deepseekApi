@@ -4,63 +4,63 @@
   "new_task_system_enabled": true,
   "agents": {
     "sisyphus": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "hephaestus": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "oracle": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "librarian": {
-      "model": "deepseek-v4-flash"
+      "model": "deepseek/deepseek-v4-flash"
     },
     "explore": {
-      "model": "deepseek-v4-flash"
+      "model": "deepseek/deepseek-v4-flash"
     },
     "multimodal-looker": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "prometheus": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "metis": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "momus": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "atlas": {
-      "model": "deepseek-v4-flash"
+      "model": "deepseek/deepseek-v4-flash"
     },
     "sisyphus-junior": {
-      "model": "deepseek-v4-flash"
+      "model": "deepseek/deepseek-v4-flash"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "ultrabrain": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "deep": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "artistry": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "quick": {
-      "model": "deepseek-v4-flash"
+      "model": "deepseek/deepseek-v4-flash"
     },
     "unspecified-low": {
-      "model": "deepseek-v4-flash"
+      "model": "deepseek/deepseek-v4-flash"
     },
     "unspecified-high": {
-      "model": "deepseek-v4-pro"
+      "model": "deepseek/deepseek-v4-pro"
     },
     "writing": {
-      "model": "deepseek-v4-flash"
+      "model": "deepseek/deepseek-v4-flash"
     }
   }
 }
