@@ -1,7 +1,7 @@
 ---
 description: "Expert Supervising Software Architect. Analyzes code, breaks loops, conducts web research, and enforces SOLID/KISS/YAGNI."
 mode: subagent
-model: "opencode-go/glm-5.2"
+model: "opencode-go/deepseek-v4-flash"
 permission:
   read: "allow"
   websearch: "allow"
