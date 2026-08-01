@@ -2,6 +2,7 @@
 description: "Analyzes file changes and automatically generates detailed, standardized Git commit messages."
 mode: subagent
 model: "opencode-go/deepseek-v4-flash"
+reasoningEffort: max
 permission: 
   edit: "deny"
   bash:

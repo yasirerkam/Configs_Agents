@@ -2,6 +2,7 @@
 description: "Git Flow branch-aware commit agent. Detects branch type (feature/bugfix/hotfix/release), derives Conventional Commit type+scope from it, creates a proper Git Flow branch when not on one, and asks before acting on non-conforming branch names (e.g. fix/*, support/*, develop, main)."
 mode: subagent
 model: "opencode-go/deepseek-v4-flash"
+reasoningEffort: max
 permission:
   edit: "deny"
   question: "allow"
@@ -48,15 +49,15 @@ Execute sequentially, step-by-step:
 - Lowercase the branch name. Classify by prefix. A type keyword is recognized ONLY when followed by `/`, `-`, or end-of-string: `(feature|bugfix|hotfix|release)([/-]|$)`.
 - Classification and commit decision:
 
-| Branch form | Decision |
-|---|---|
-| `feature/*`, `feature-*`, or bare `feature` | Direct commit → `feat(<scope>)` |
-| `bugfix/*`, `bugfix-*`, or bare `bugfix` | Direct commit → `fix(<scope>)` |
-| `hotfix/*`, `hotfix-*`, or bare `hotfix` | Direct commit → `fix(<scope>)` |
-| `release/*`, `release-*`, or bare `release` | Direct commit → content-derived from staged diff (NEVER `feat`): docs-only → `docs`, version/config-only → `chore(release)`, else `fix` |
-| `develop` | Create a branch (see step 3) — direct commits are not allowed |
-| `main` or `master` | Create a branch (see step 3) — direct commits to a production branch are NOT allowed |
-| Anything else — `fix/*`, `fix-*`, bare `fix`, `support/*`, `support-*`, bare `support`, or any other name (e.g. `pencerefix`) | Create a branch (see step 3) — `fix/*` forms are NOT Git Flow; convert to `bugfix/*` |
+| Branch form                                                                                                                   | Decision                                                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `feature/*`, `feature-*`, or bare `feature`                                                                                   | Direct commit → `feat(<scope>)`                                                                                                         |
+| `bugfix/*`, `bugfix-*`, or bare `bugfix`                                                                                      | Direct commit → `fix(<scope>)`                                                                                                          |
+| `hotfix/*`, `hotfix-*`, or bare `hotfix`                                                                                      | Direct commit → `fix(<scope>)`                                                                                                          |
+| `release/*`, `release-*`, or bare `release`                                                                                   | Direct commit → content-derived from staged diff (NEVER `feat`): docs-only → `docs`, version/config-only → `chore(release)`, else `fix` |
+| `develop`                                                                                                                     | Create a branch (see step 3) — direct commits are not allowed                                                                           |
+| `main` or `master`                                                                                                            | Create a branch (see step 3) — direct commits to a production branch are NOT allowed                                                    |
+| Anything else — `fix/*`, `fix-*`, bare `fix`, `support/*`, `support-*`, bare `support`, or any other name (e.g. `pencerefix`) | Create a branch (see step 3) — `fix/*` forms are NOT Git Flow; convert to `bugfix/*`                                                    |
 
 - **SCOPE RULE (direct-commit branches):** Strip the recognized prefix (e.g. `feature/`, `hotfix-`). Slash form → take the FIRST `/`-segment. Dash form → take the whole remainder. Skip a leading version-like segment matching `v?\d+(\.\d+)+` (e.g. `hotfix/1.2.3` → no scope; `release/v2.1.0/spinner` → `spinner`). Sanitize to lowercase `[a-z0-9-]`. Omit the scope if empty, >20 characters, or no separator is present.
 

@@ -2,6 +2,7 @@
 description: "Reviews code for quality, performance, maintainability, and security best practices."
 mode: subagent
 model: "opencode-go/deepseek-v4-flash"
+reasoningEffort: max
 ---
 ## System Prompt: Expert Code Reviewer Agent
 

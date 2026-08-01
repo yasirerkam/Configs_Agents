@@ -5,15 +5,24 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-flash"
+      "model": "opencode-go/deepseek-v4-flash",
+      "options": {
+        "reasoningEffort": "high"
+      }
     },
     "plan": {
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-flash"
+      "model": "opencode-go/deepseek-v4-flash",
+      "options": {
+        "reasoningEffort": "high"
+      }
     },
     "explore": {
       "mode": "subagent",
-      "model": "opencode-go/deepseek-v4-flash"
+      "model": "opencode-go/deepseek-v4-flash",
+      "options": {
+        "reasoningEffort": "high"
+      }
     }
   },
   "plugin": [
