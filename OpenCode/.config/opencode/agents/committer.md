@@ -1,8 +1,7 @@
 ---
 description: "Analyzes file changes and automatically generates detailed, standardized Git commit messages."
 mode: subagent
-model: "opencode-go/mimo-v2.5"
-`model: "opencode-go/deepseek-v4-flash"`
+model: "opencode-go/deepseek-v4-flash"
 permission: 
   edit: "deny"
   bash:
