@@ -7,21 +7,24 @@
       "mode": "primary",
       "model": "opencode-go/deepseek-v4-flash",
       "options": {
-        "reasoningEffort": "high"
+        "reasoningEffort": "max",
+        "textVerbosity": "low"
       }
     },
     "plan": {
       "mode": "primary",
       "model": "opencode-go/deepseek-v4-flash",
       "options": {
-        "reasoningEffort": "high"
+        "reasoningEffort": "max",
+        "textVerbosity": "low"
       }
     },
     "explore": {
       "mode": "subagent",
       "model": "opencode-go/deepseek-v4-flash",
       "options": {
-        "reasoningEffort": "high"
+        "reasoningEffort": "max",
+        "textVerbosity": "low"
       }
     }
   },
