@@ -5,20 +5,15 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-pro"
-      // "model": "opencode-go/mimo-v2.5-pro"
-      // "model": "opencode-go/minimax-m3"
+      "model": "opencode-go/deepseek-v4-flash"
     },
     "plan": {
       "mode": "primary",
-      // "model": "opencode-go/deepseek-v4-pro"
-      "model": "opencode-go/mimo-v2.5-pro"
-      // "model": "opencode-go/minimax-m3"
+      "model": "opencode-go/deepseek-v4-flash"
     },
     "explore": {
       "mode": "subagent",
-      "model": "opencode-go/mimo-v2.5"
-      // "model": "opencode-go/deepseek-v4-flash"
+      "model": "opencode-go/deepseek-v4-flash"
     }
   },
   "plugin": [
