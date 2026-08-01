@@ -3,7 +3,5 @@
   "keybinds": {
     "command_list": "ctrl+o"
   },
-  "plugin": [
-    "oh-my-openagent@latest"
-  ]
+  "plugin": []
 }

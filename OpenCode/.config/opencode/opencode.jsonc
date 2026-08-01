@@ -22,8 +22,7 @@
     }
   },
   "plugin": [
-    "@mohak34/opencode-notifier@latest",
-    "oh-my-openagent@latest"
+    "@mohak34/opencode-notifier@latest"
   ],
   "mcp": {
     "codebase-memory-mcp": {
