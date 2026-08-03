@@ -4,11 +4,9 @@
     "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/omo.schema.json",
     "agents": {
       "sisyphus": {
-        "models": [
-          {
-            "model": "opencode/claude-opus-5",
-            "reasoning": "max"
-          },
+        "model": "opencode/claude-opus-5",
+        "variant": "max",
+        "fallback_models": [
           {
             "model": "opencode-go/kimi-k3"
           },
@@ -17,7 +15,7 @@
           },
           {
             "model": "opencode/gpt-5.6-sol",
-            "reasoning": "medium"
+            "variant": "medium"
           },
           {
             "model": "opencode/glm-5.2"
@@ -29,21 +27,19 @@
       },
       "hephaestus": {
         "model": "opencode/gpt-5.6-sol",
-        "reasoning": "medium"
+        "variant": "medium"
       },
       "oracle": {
-        "models": [
-          {
-            "model": "opencode/gpt-5.6-sol",
-            "reasoning": "xhigh"
-          },
+        "model": "opencode/gpt-5.6-sol",
+        "variant": "xhigh",
+        "fallback_models": [
           {
             "model": "opencode/gemini-3.1-pro",
-            "reasoning": "high"
+            "variant": "high"
           },
           {
             "model": "opencode/claude-opus-5",
-            "reasoning": "max"
+            "variant": "max"
           },
           {
             "model": "opencode-go/glm-5.2"
@@ -51,8 +47,8 @@
         ]
       },
       "librarian": {
-        "models": [
-          "opencode-go/qwen3.7-plus",
+        "model": "opencode-go/qwen3.7-plus",
+        "fallback_models": [
           {
             "model": "opencode-go/minimax-m3"
           },
@@ -62,8 +58,8 @@
         ]
       },
       "explore": {
-        "models": [
-          "opencode/gpt-5-nano",
+        "model": "opencode/gpt-5-nano",
+        "fallback_models": [
           {
             "model": "opencode-go/qwen3.7-plus"
           },
@@ -76,11 +72,9 @@
         ]
       },
       "multimodal-looker": {
-        "models": [
-          {
-            "model": "opencode/gpt-5.6-sol",
-            "reasoning": "low"
-          },
+        "model": "opencode/gpt-5.6-sol",
+        "variant": "low",
+        "fallback_models": [
           {
             "model": "opencode-go/kimi-k3"
           },
@@ -90,50 +84,44 @@
         ]
       },
       "prometheus": {
-        "models": [
-          {
-            "model": "opencode/claude-fable-5",
-            "reasoning": "high"
-          },
+        "model": "opencode/claude-fable-5",
+        "variant": "high",
+        "fallback_models": [
           {
             "model": "opencode-go/kimi-k3",
-            "reasoning": "high"
+            "variant": "high"
           },
           {
             "model": "opencode/kimi-k3",
-            "reasoning": "high"
+            "variant": "high"
           }
         ]
       },
       "metis": {
-        "models": [
-          {
-            "model": "opencode/claude-opus-5",
-            "reasoning": "high"
-          },
+        "model": "opencode/claude-opus-5",
+        "variant": "high",
+        "fallback_models": [
           {
             "model": "opencode-go/kimi-k3",
-            "reasoning": "low"
+            "variant": "low"
           },
           {
             "model": "opencode/kimi-k3",
-            "reasoning": "low"
+            "variant": "low"
           }
         ]
       },
       "momus": {
-        "models": [
-          {
-            "model": "opencode/gpt-5.6-sol",
-            "reasoning": "xhigh"
-          },
+        "model": "opencode/gpt-5.6-sol",
+        "variant": "xhigh",
+        "fallback_models": [
           {
             "model": "opencode/claude-opus-5",
-            "reasoning": "max"
+            "variant": "max"
           },
           {
             "model": "opencode/gemini-3.1-pro",
-            "reasoning": "high"
+            "variant": "high"
           },
           {
             "model": "opencode-go/glm-5.2"
@@ -141,14 +129,14 @@
         ]
       },
       "atlas": {
-        "models": [
-          "opencode/claude-sonnet-5",
+        "model": "opencode/claude-sonnet-5",
+        "fallback_models": [
           {
             "model": "opencode-go/kimi-k3"
           },
           {
             "model": "opencode/gpt-5.6-sol",
-            "reasoning": "medium"
+            "variant": "medium"
           },
           {
             "model": "opencode-go/minimax-m3"
@@ -159,14 +147,14 @@
         ]
       },
       "sisyphus-junior": {
-        "models": [
-          "opencode/claude-sonnet-5",
+        "model": "opencode/claude-sonnet-5",
+        "fallback_models": [
           {
             "model": "opencode-go/kimi-k3"
           },
           {
             "model": "opencode/gpt-5.6-sol",
-            "reasoning": "medium"
+            "variant": "medium"
           },
           {
             "model": "opencode-go/minimax-m3"
@@ -182,83 +170,77 @@
     },
     "categories": {
       "visual-engineering": {
-        "models": [
-          {
-            "model": "opencode/claude-opus-5",
-            "reasoning": "max"
-          },
+        "model": "opencode/claude-opus-5",
+        "variant": "max",
+        "fallback_models": [
           {
             "model": "opencode-go/kimi-k3",
-            "reasoning": "high"
+            "variant": "high"
           },
           {
             "model": "opencode/kimi-k3",
-            "reasoning": "high"
+            "variant": "high"
           },
           {
             "model": "opencode-go/glm-5.2",
-            "reasoning": "high"
+            "variant": "high"
           },
           {
             "model": "opencode/gpt-5.6-sol",
-            "reasoning": "medium"
+            "variant": "medium"
           }
         ]
       },
       "ultrabrain": {
         "model": "opencode/gpt-5.6-sol",
-        "reasoning": "xhigh"
+        "variant": "xhigh"
       },
       "deep": {
         "model": "opencode/gpt-5.6-sol",
-        "reasoning": "medium"
+        "variant": "medium"
       },
       "artistry": {
-        "models": [
-          {
-            "model": "opencode/claude-fable-5",
-            "reasoning": "high"
-          },
+        "model": "opencode/claude-fable-5",
+        "variant": "high",
+        "fallback_models": [
           {
             "model": "opencode-go/kimi-k3",
-            "reasoning": "high"
+            "variant": "high"
           },
           {
             "model": "opencode/kimi-k3",
-            "reasoning": "high"
+            "variant": "high"
           },
           {
             "model": "opencode/claude-opus-5",
-            "reasoning": "high"
+            "variant": "high"
           }
         ]
       },
       "quick": {
-        "models": [
-          "opencode-go/qwen3.6-flash",
+        "model": "opencode-go/qwen3.6-flash",
+        "fallback_models": [
           {
             "model": "opencode-go/minimax-m3",
-            "reasoning": "high"
+            "variant": "high"
           },
           {
             "model": "opencode-go/minimax-m2.7",
-            "reasoning": "high"
+            "variant": "high"
           }
         ]
       },
       "unspecified-low": {
-        "models": [
-          {
-            "model": "opencode/gpt-5.6-terra",
-            "reasoning": "high"
-          },
+        "model": "opencode/gpt-5.6-terra",
+        "variant": "high",
+        "fallback_models": [
           {
             "model": "opencode/claude-sonnet-5",
-            "reasoning": "low"
+            "variant": "low"
           },
           {
             "model": "opencode-go/deepseek-v4-pro",
-            "reasoning": "max"
+            "variant": "max"
           },
           {
             "model": "opencode-go/mimo-v2.5-pro"
@@ -266,18 +248,16 @@
         ]
       },
       "unspecified-high": {
-        "models": [
-          {
-            "model": "opencode/gpt-5.6-terra",
-            "reasoning": "high"
-          },
+        "model": "opencode/gpt-5.6-terra",
+        "variant": "high",
+        "fallback_models": [
           {
             "model": "opencode/claude-sonnet-5",
-            "reasoning": "low"
+            "variant": "low"
           },
           {
             "model": "opencode-go/deepseek-v4-pro",
-            "reasoning": "max"
+            "variant": "max"
           },
           {
             "model": "opencode-go/mimo-v2.5-pro"
@@ -285,18 +265,16 @@
         ]
       },
       "writing": {
-        "models": [
-          {
-            "model": "opencode-go/kimi-k3",
-            "reasoning": "low"
-          },
+        "model": "opencode-go/kimi-k3",
+        "variant": "low",
+        "fallback_models": [
           {
             "model": "opencode/kimi-k3",
-            "reasoning": "low"
+            "variant": "low"
           },
           {
             "model": "opencode/claude-opus-5",
-            "reasoning": "low"
+            "variant": "low"
           },
           {
             "model": "opencode/gemini-3.6-flash"
@@ -304,8 +282,5 @@
         ]
       }
     }
-  },
-  "_migrations": [
-    "2026-08-reasoning-unification"
-  ]
+  }
 }
