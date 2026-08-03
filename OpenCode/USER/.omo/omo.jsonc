@@ -4,280 +4,156 @@
     "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/omo.schema.json",
     "agents": {
       "sisyphus": {
-        "model": "opencode/claude-opus-5",
-        "variant": "max",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/kimi-k3"
-          },
-          {
-            "model": "opencode/kimi-k3"
-          },
-          {
-            "model": "opencode/gpt-5.6-sol",
-            "variant": "medium"
-          },
-          {
-            "model": "opencode/glm-5.2"
-          },
-          {
-            "model": "opencode/big-pickle"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "hephaestus": {
-        "model": "opencode/gpt-5.6-sol",
-        "variant": "medium"
-      },
-      "oracle": {
-        "model": "opencode/gpt-5.6-sol",
-        "variant": "xhigh",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode/gemini-3.1-pro",
-            "variant": "high"
-          },
+            "model": "opencode/deepseek-v4-flash-free"
+          }
+        ]
+      },
+      "oracle": {
+        "model": "opencode-go/deepseek-v4-flash",
+        "fallback_models": [
           {
-            "model": "opencode/claude-opus-5",
-            "variant": "max"
-          },
-          {
-            "model": "opencode-go/glm-5.2"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "librarian": {
-        "model": "opencode-go/qwen3.7-plus",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/minimax-m3"
-          },
-          {
-            "model": "opencode-go/minimax-m2.7"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "explore": {
-        "model": "opencode/gpt-5-nano",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/qwen3.7-plus"
-          },
-          {
-            "model": "opencode-go/minimax-m3"
-          },
-          {
-            "model": "opencode-go/minimax-m2.7"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "multimodal-looker": {
-        "model": "opencode/gpt-5.6-sol",
-        "variant": "low",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/kimi-k3"
-          },
-          {
-            "model": "opencode/gpt-5-nano"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "prometheus": {
-        "model": "opencode/claude-fable-5",
-        "variant": "high",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/kimi-k3",
-            "variant": "high"
-          },
-          {
-            "model": "opencode/kimi-k3",
-            "variant": "high"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "metis": {
-        "model": "opencode/claude-opus-5",
-        "variant": "high",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/kimi-k3",
-            "variant": "low"
-          },
-          {
-            "model": "opencode/kimi-k3",
-            "variant": "low"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "momus": {
-        "model": "opencode/gpt-5.6-sol",
-        "variant": "xhigh",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode/claude-opus-5",
-            "variant": "max"
-          },
-          {
-            "model": "opencode/gemini-3.1-pro",
-            "variant": "high"
-          },
-          {
-            "model": "opencode-go/glm-5.2"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "atlas": {
-        "model": "opencode/claude-sonnet-5",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/kimi-k3"
-          },
-          {
-            "model": "opencode/gpt-5.6-sol",
-            "variant": "medium"
-          },
-          {
-            "model": "opencode-go/minimax-m3"
-          },
-          {
-            "model": "opencode-go/minimax-m2.7"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "sisyphus-junior": {
-        "model": "opencode/claude-sonnet-5",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/kimi-k3"
-          },
-          {
-            "model": "opencode/gpt-5.6-sol",
-            "variant": "medium"
-          },
-          {
-            "model": "opencode-go/minimax-m3"
-          },
-          {
-            "model": "opencode-go/minimax-m2.7"
-          },
-          {
-            "model": "opencode/big-pickle"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       }
     },
     "categories": {
       "visual-engineering": {
-        "model": "opencode/claude-opus-5",
-        "variant": "max",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/kimi-k3",
-            "variant": "high"
-          },
-          {
-            "model": "opencode/kimi-k3",
-            "variant": "high"
-          },
-          {
-            "model": "opencode-go/glm-5.2",
-            "variant": "high"
-          },
-          {
-            "model": "opencode/gpt-5.6-sol",
-            "variant": "medium"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "ultrabrain": {
-        "model": "opencode/gpt-5.6-sol",
-        "variant": "xhigh"
-      },
-      "deep": {
-        "model": "opencode/gpt-5.6-sol",
-        "variant": "medium"
-      },
-      "artistry": {
-        "model": "opencode/claude-fable-5",
-        "variant": "high",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/kimi-k3",
-            "variant": "high"
-          },
+            "model": "opencode/deepseek-v4-flash-free"
+          }
+        ]
+      },
+      "deep": {
+        "model": "opencode-go/deepseek-v4-flash",
+        "fallback_models": [
           {
-            "model": "opencode/kimi-k3",
-            "variant": "high"
-          },
+            "model": "opencode/deepseek-v4-flash-free"
+          }
+        ]
+      },
+      "artistry": {
+        "model": "opencode-go/deepseek-v4-flash",
+        "fallback_models": [
           {
-            "model": "opencode/claude-opus-5",
-            "variant": "high"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "quick": {
-        "model": "opencode-go/qwen3.6-flash",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode-go/minimax-m3",
-            "variant": "high"
-          },
-          {
-            "model": "opencode-go/minimax-m2.7",
-            "variant": "high"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "unspecified-low": {
-        "model": "opencode/gpt-5.6-terra",
-        "variant": "high",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode/claude-sonnet-5",
-            "variant": "low"
-          },
-          {
-            "model": "opencode-go/deepseek-v4-pro",
-            "variant": "max"
-          },
-          {
-            "model": "opencode-go/mimo-v2.5-pro"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "unspecified-high": {
-        "model": "opencode/gpt-5.6-terra",
-        "variant": "high",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode/claude-sonnet-5",
-            "variant": "low"
-          },
-          {
-            "model": "opencode-go/deepseek-v4-pro",
-            "variant": "max"
-          },
-          {
-            "model": "opencode-go/mimo-v2.5-pro"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       },
       "writing": {
-        "model": "opencode-go/kimi-k3",
-        "variant": "low",
+        "model": "opencode-go/deepseek-v4-flash",
         "fallback_models": [
           {
-            "model": "opencode/kimi-k3",
-            "variant": "low"
-          },
-          {
-            "model": "opencode/claude-opus-5",
-            "variant": "low"
-          },
-          {
-            "model": "opencode/gemini-3.6-flash"
+            "model": "opencode/deepseek-v4-flash-free"
           }
         ]
       }
