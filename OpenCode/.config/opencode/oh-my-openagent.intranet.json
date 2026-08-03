@@ -1,0 +1,180 @@
+{
+    "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+    "hashline_edit": true,
+    "new_task_system_enabled": true,
+    "runtime_fallback": {
+        "enabled": true,
+        "retry_on_errors": [
+            400,
+            401,
+            403,
+            404,
+            429,
+            500,
+            502,
+            503,
+            504
+        ],
+        "max_fallback_attempts": 1,
+        "cooldown_seconds": 15,
+        "timeout_seconds": 10,
+        "notify_on_fallback": true,
+        "restore_primary_after_cooldown": true
+    },
+    "agents": {
+        "sisyphus": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "hephaestus": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "oracle": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "librarian": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "explore": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "multimodal-looker": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "prometheus": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "metis": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "momus": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "atlas": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "sisyphus-junior": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        }
+    },
+    "categories": {
+        "visual-engineering": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "ultrabrain": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "deep": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "artistry": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "quick": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "unspecified-low": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "unspecified-high": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        },
+        "writing": {
+            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "fallback_models": [
+                {
+                    "model": "OpenWebUI/glm-5.2"
+                }
+            ]
+        }
+    }
+}

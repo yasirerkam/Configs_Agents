@@ -1,0 +1,286 @@
+// OMO configuration
+{
+  "[opencode]": {
+    "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/omo.schema.json",
+    "agents": {
+      "sisyphus": {
+        "model": "opencode/claude-opus-5",
+        "variant": "max",
+        "fallback_models": [
+          {
+            "model": "opencode-go/kimi-k3"
+          },
+          {
+            "model": "opencode/kimi-k3"
+          },
+          {
+            "model": "opencode/gpt-5.6-sol",
+            "variant": "medium"
+          },
+          {
+            "model": "opencode/glm-5.2"
+          },
+          {
+            "model": "opencode/big-pickle"
+          }
+        ]
+      },
+      "hephaestus": {
+        "model": "opencode/gpt-5.6-sol",
+        "variant": "medium"
+      },
+      "oracle": {
+        "model": "opencode/gpt-5.6-sol",
+        "variant": "xhigh",
+        "fallback_models": [
+          {
+            "model": "opencode/gemini-3.1-pro",
+            "variant": "high"
+          },
+          {
+            "model": "opencode/claude-opus-5",
+            "variant": "max"
+          },
+          {
+            "model": "opencode-go/glm-5.2"
+          }
+        ]
+      },
+      "librarian": {
+        "model": "opencode-go/qwen3.7-plus",
+        "fallback_models": [
+          {
+            "model": "opencode-go/minimax-m3"
+          },
+          {
+            "model": "opencode-go/minimax-m2.7"
+          }
+        ]
+      },
+      "explore": {
+        "model": "opencode/gpt-5-nano",
+        "fallback_models": [
+          {
+            "model": "opencode-go/qwen3.7-plus"
+          },
+          {
+            "model": "opencode-go/minimax-m3"
+          },
+          {
+            "model": "opencode-go/minimax-m2.7"
+          }
+        ]
+      },
+      "multimodal-looker": {
+        "model": "opencode/gpt-5.6-sol",
+        "variant": "low",
+        "fallback_models": [
+          {
+            "model": "opencode-go/kimi-k3"
+          },
+          {
+            "model": "opencode/gpt-5-nano"
+          }
+        ]
+      },
+      "prometheus": {
+        "model": "opencode/claude-fable-5",
+        "variant": "high",
+        "fallback_models": [
+          {
+            "model": "opencode-go/kimi-k3",
+            "variant": "high"
+          },
+          {
+            "model": "opencode/kimi-k3",
+            "variant": "high"
+          }
+        ]
+      },
+      "metis": {
+        "model": "opencode/claude-opus-5",
+        "variant": "high",
+        "fallback_models": [
+          {
+            "model": "opencode-go/kimi-k3",
+            "variant": "low"
+          },
+          {
+            "model": "opencode/kimi-k3",
+            "variant": "low"
+          }
+        ]
+      },
+      "momus": {
+        "model": "opencode/gpt-5.6-sol",
+        "variant": "xhigh",
+        "fallback_models": [
+          {
+            "model": "opencode/claude-opus-5",
+            "variant": "max"
+          },
+          {
+            "model": "opencode/gemini-3.1-pro",
+            "variant": "high"
+          },
+          {
+            "model": "opencode-go/glm-5.2"
+          }
+        ]
+      },
+      "atlas": {
+        "model": "opencode/claude-sonnet-5",
+        "fallback_models": [
+          {
+            "model": "opencode-go/kimi-k3"
+          },
+          {
+            "model": "opencode/gpt-5.6-sol",
+            "variant": "medium"
+          },
+          {
+            "model": "opencode-go/minimax-m3"
+          },
+          {
+            "model": "opencode-go/minimax-m2.7"
+          }
+        ]
+      },
+      "sisyphus-junior": {
+        "model": "opencode/claude-sonnet-5",
+        "fallback_models": [
+          {
+            "model": "opencode-go/kimi-k3"
+          },
+          {
+            "model": "opencode/gpt-5.6-sol",
+            "variant": "medium"
+          },
+          {
+            "model": "opencode-go/minimax-m3"
+          },
+          {
+            "model": "opencode-go/minimax-m2.7"
+          },
+          {
+            "model": "opencode/big-pickle"
+          }
+        ]
+      }
+    },
+    "categories": {
+      "visual-engineering": {
+        "model": "opencode/claude-opus-5",
+        "variant": "max",
+        "fallback_models": [
+          {
+            "model": "opencode-go/kimi-k3",
+            "variant": "high"
+          },
+          {
+            "model": "opencode/kimi-k3",
+            "variant": "high"
+          },
+          {
+            "model": "opencode-go/glm-5.2",
+            "variant": "high"
+          },
+          {
+            "model": "opencode/gpt-5.6-sol",
+            "variant": "medium"
+          }
+        ]
+      },
+      "ultrabrain": {
+        "model": "opencode/gpt-5.6-sol",
+        "variant": "xhigh"
+      },
+      "deep": {
+        "model": "opencode/gpt-5.6-sol",
+        "variant": "medium"
+      },
+      "artistry": {
+        "model": "opencode/claude-fable-5",
+        "variant": "high",
+        "fallback_models": [
+          {
+            "model": "opencode-go/kimi-k3",
+            "variant": "high"
+          },
+          {
+            "model": "opencode/kimi-k3",
+            "variant": "high"
+          },
+          {
+            "model": "opencode/claude-opus-5",
+            "variant": "high"
+          }
+        ]
+      },
+      "quick": {
+        "model": "opencode-go/qwen3.6-flash",
+        "fallback_models": [
+          {
+            "model": "opencode-go/minimax-m3",
+            "variant": "high"
+          },
+          {
+            "model": "opencode-go/minimax-m2.7",
+            "variant": "high"
+          }
+        ]
+      },
+      "unspecified-low": {
+        "model": "opencode/gpt-5.6-terra",
+        "variant": "high",
+        "fallback_models": [
+          {
+            "model": "opencode/claude-sonnet-5",
+            "variant": "low"
+          },
+          {
+            "model": "opencode-go/deepseek-v4-pro",
+            "variant": "max"
+          },
+          {
+            "model": "opencode-go/mimo-v2.5-pro"
+          }
+        ]
+      },
+      "unspecified-high": {
+        "model": "opencode/gpt-5.6-terra",
+        "variant": "high",
+        "fallback_models": [
+          {
+            "model": "opencode/claude-sonnet-5",
+            "variant": "low"
+          },
+          {
+            "model": "opencode-go/deepseek-v4-pro",
+            "variant": "max"
+          },
+          {
+            "model": "opencode-go/mimo-v2.5-pro"
+          }
+        ]
+      },
+      "writing": {
+        "model": "opencode-go/kimi-k3",
+        "variant": "low",
+        "fallback_models": [
+          {
+            "model": "opencode/kimi-k3",
+            "variant": "low"
+          },
+          {
+            "model": "opencode/claude-opus-5",
+            "variant": "low"
+          },
+          {
+            "model": "opencode/gemini-3.6-flash"
+          }
+        ]
+      }
+    }
+  }
+}
