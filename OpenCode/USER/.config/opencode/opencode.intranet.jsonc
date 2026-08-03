@@ -6,26 +6,20 @@
     "build": {
       "mode": "primary",
       "model": "LiteLLM-glm-5.2/glm-5.2",
-      "options": {
-        "reasoningEffort": "max",
-        "textVerbosity": "low"
-      }
+      "reasoningEffort": "max",
+      "textVerbosity": "low"
     },
     "plan": {
       "mode": "primary",
       "model": "LiteLLM-glm-5.2/glm-5.2",
-      "options": {
-        "reasoningEffort": "max",
-        "textVerbosity": "low"
-      }
+      "reasoningEffort": "max",
+      "textVerbosity": "low"
     },
     "explore": {
       "mode": "subagent",
       "model": "LiteLLM-glm-5.2/glm-5.2",
-      "options": {
-        "reasoningEffort": "max",
-        "textVerbosity": "low"
-      }
+      "reasoningEffort": "max",
+      "textVerbosity": "low"
     }
   },
   "plugin": [

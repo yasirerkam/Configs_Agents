@@ -8,7 +8,19 @@
       1. Model endpoints are swapped to local servers (LiteLLM / OpenWebUI).
       2. Air-Gapped operational constraints are appended to markdown prompts.
 
-    Default mode: writes *.intranet files next to the live configs.
+    Default mode: writes <name>.intranet.<ext> variants next to the live configs
+    (e.g. AGENTS.md -> AGENTS.intranet.md). Generated variants are tracked in the
+    repo and treated as generated artifacts: manual edits are overwritten on the
+    next run.
+
+    NOTE: On the intranet machine the files under agents\*.intranet.md register
+    as extra subagents (architect.intranet, etc.) because opencode loads every
+    markdown file in the agents dir. Benign: they mirror the -Apply'd live agents.
+
+    NOTE: opencode.intranet.jsonc intentionally keeps the @mohak34/opencode-notifier
+    npm plugin; the script prints a red warning for the air-gapped startup fetch.
+    The flat reasoningEffort/textVerbosity keys match the current opencode schema.
+
     -Apply mode:  overwrites the live configs directly (intended on intranet machines).
 
     Intranet machine deployment:
@@ -102,7 +114,8 @@ function Add-AirGappedSection {
     $escapedEnd = [regex]::Escape($MarkerEnd)
     $clean = [regex]::Replace($Text, "(?s)\r?\n?\s*$escapedBegin.*?$escapedEnd", '')
     $clean = $clean.TrimEnd("`r", "`n")
-    $block = $MarkerBegin + $eol + $Heading + $eol + $eol + $AirGappedSection + $eol + $MarkerEnd
+    $section = $AirGappedSection -replace "`r?`n", $eol
+    $block = $MarkerBegin + $eol + $Heading + $eol + $eol + $section + $eol + $MarkerEnd
     $result = $clean + $eol + $eol + $block + $eol
     if ($result -match [regex]::Escape($MarkerBegin)) {
         $count = ([regex]::Matches($result, [regex]::Escape($MarkerBegin))).Count
@@ -148,6 +161,10 @@ function ConvertTo-IntranetJson {
     if ($actualAgents -ne $expectedAgents -or $actualCategories -ne $expectedCategories) {
         throw "$Label : JSON donusumu veri kaybetti (agent $expectedAgents->$actualAgents, kategori $expectedCategories->$actualCategories)"
     }
+    $fbOut = [regex]::Matches($out, '"fallback_models":\s*(\[|\{)') | ForEach-Object { $_.Groups[1].Value }
+    if ($fbOut | Where-Object { $_ -ne '[' }) {
+        throw "$Label : fallback_models dizi olarak korunamadi (PS 5.1 serializer tek elemani object'e indirdi)"
+    }
     $out = $out -replace 'opencode-go/[\w.-]+', $PrimaryModel
     Assert-NoCloudModels $out $Label
     return $out
@@ -169,12 +186,12 @@ function ConvertTo-IntranetJsonc {
 
 try {
     $targets = @(
-        @{ Src = 'AGENTS.md';          Out = 'AGENTS.md.intranet';                    Heading = '# OPERATIONAL ENVIRONMENT CONSTRAINTS (AIR-GAPPED NETWORK)'; AddSection = $true;  Type = 'md' },
-        @{ Src = 'agents\architect.md'; Out = 'agents\architect.md.intranet';         Heading = '## Operational Environment Constraints (Air-Gapped Network)'; AddSection = $true;  Type = 'md' },
-        @{ Src = 'agents\reviewer.md';  Out = 'agents\reviewer.md.intranet';          Heading = '### 4. Operational Environment Constraints (Air-Gapped Network)'; AddSection = $true;  Type = 'md' },
-        @{ Src = 'agents\committer.md'; Out = 'agents\committer.md.intranet';         Heading = '';                                                             AddSection = $false; Type = 'md' },
-        @{ Src = 'oh-my-openagent.json'; Out = 'oh-my-openagent.json.intranet';       Heading = '';                                                             AddSection = $false; Type = 'json' },
-        @{ Src = 'opencode.jsonc';       Out = 'opencode.jsonc.intranet';             Heading = '';                                                             AddSection = $false; Type = 'jsonc' }
+        @{ Src = 'AGENTS.md';            Out = 'AGENTS.intranet.md';                  Heading = '# OPERATIONAL ENVIRONMENT CONSTRAINTS (AIR-GAPPED NETWORK)'; AddSection = $true;  Type = 'md' },
+        @{ Src = 'agents\architect.md';  Out = 'agents\architect.intranet.md';        Heading = '## Operational Environment Constraints (Air-Gapped Network)'; AddSection = $true;  Type = 'md' },
+        @{ Src = 'agents\reviewer.md';   Out = 'agents\reviewer.intranet.md';         Heading = '### 4. Operational Environment Constraints (Air-Gapped Network)'; AddSection = $true;  Type = 'md' },
+        @{ Src = 'agents\committer.md';  Out = 'agents\committer.intranet.md';        Heading = '';                                                             AddSection = $false; Type = 'md' },
+        @{ Src = 'oh-my-openagent.jsonc'; Out = 'oh-my-openagent.intranet.jsonc';     Heading = '';                                                             AddSection = $false; Type = 'json' },
+        @{ Src = 'opencode.jsonc';       Out = 'opencode.intranet.jsonc';             Heading = '';                                                             AddSection = $false; Type = 'jsonc' }
     )
 
     if ($Apply -and -not $Force) {
@@ -219,6 +236,9 @@ try {
 
         Write-Utf8NoBom $targetPath $content
         Write-Host "YAZILDI: $label" -ForegroundColor Green
+        if ($t.Out -eq 'opencode.intranet.jsonc') {
+            Write-Host "UYARI: opencode.intranet.jsonc icinde '@mohak34/opencode-notifier@latest' plugin'i duruyor. Air-gapped makinede opencode baslangicta npm erisimi deneyecek (basarisiz olabilir). Gerekirse plugin'i manuel kaldirin." -ForegroundColor Red
+        }
     }
 
     Write-Host "Tamam. Intranet makinelerinde: git fetch origin; git reset --hard origin/main; .\scripts\generate-intranet.ps1 -Apply -Backup" -ForegroundColor Magenta
