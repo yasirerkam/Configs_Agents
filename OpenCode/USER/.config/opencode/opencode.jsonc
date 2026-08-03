@@ -6,26 +6,20 @@
     "build": {
       "mode": "primary",
       "model": "opencode-go/deepseek-v4-flash",
-      "options": {
-        "reasoningEffort": "max",
-        "textVerbosity": "low"
-      }
+      "reasoningEffort": "max",
+      "textVerbosity": "low"
     },
     "plan": {
       "mode": "primary",
       "model": "opencode-go/deepseek-v4-flash",
-      "options": {
-        "reasoningEffort": "max",
-        "textVerbosity": "low"
-      }
+      "reasoningEffort": "max",
+      "textVerbosity": "low"
     },
     "explore": {
       "mode": "subagent",
       "model": "opencode-go/deepseek-v4-flash",
-      "options": {
-        "reasoningEffort": "max",
-        "textVerbosity": "low"
-      }
+      "reasoningEffort": "max",
+      "textVerbosity": "low"
     }
   },
   "plugin": [
