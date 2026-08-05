@@ -24,6 +24,8 @@
   "agents": {
     "sisyphus": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -32,6 +34,8 @@
     },
     "hephaestus": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -40,6 +44,8 @@
     },
     "oracle": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -48,6 +54,8 @@
     },
     "librarian": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -56,6 +64,8 @@
     },
     "explore": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -64,6 +74,8 @@
     },
     "multimodal-looker": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -72,6 +84,8 @@
     },
     "prometheus": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -80,6 +94,8 @@
     },
     "metis": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -88,6 +104,8 @@
     },
     "momus": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -96,6 +114,8 @@
     },
     "atlas": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -104,6 +124,8 @@
     },
     "sisyphus-junior": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -114,6 +136,8 @@
   "categories": {
     "visual-engineering": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -122,6 +146,8 @@
     },
     "ultrabrain": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -130,6 +156,8 @@
     },
     "deep": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -138,6 +166,8 @@
     },
     "artistry": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -146,6 +176,8 @@
     },
     "quick": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -154,6 +186,8 @@
     },
     "unspecified-low": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -162,6 +196,8 @@
     },
     "unspecified-high": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
@@ -170,6 +206,8 @@
     },
     "writing": {
       "model": "opencode-go/deepseek-v4-flash",
+      "reasoningEffort": "max",
+      "textVerbosity": "low",
       "fallback_models": [
         {
           "model": "opencode/deepseek-v4-flash-free"
