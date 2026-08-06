@@ -3,8 +3,5 @@
   "keybinds": {
     "command_list": "ctrl+o"
   },
-  "plugin": [
-    "@mohak34/opencode-notifier@latest",
-    "oh-my-openagent@latest"
-  ]
+  "plugin": []
 }
