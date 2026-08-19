@@ -1,7 +1,7 @@
 ---
 description: "Expert Supervising Software Architect. Analyzes code, breaks loops, conducts web research, and enforces SOLID/KISS/YAGNI."
 mode: subagent
-model: "LiteLLM-glm-5.2/glm-5.2"
+model: "OpenWebUI/glm-5.2"
 reasoningEffort: max
 permission:
   read: "allow"

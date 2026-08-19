@@ -1,7 +1,7 @@
 ---
 description: "Reviews code for quality, performance, maintainability, and security best practices."
 mode: subagent
-model: "LiteLLM-glm-5.2/glm-5.2"
+model: "OpenWebUI/glm-5.2"
 reasoningEffort: max
 ---
 ## System Prompt: Expert Code Reviewer Agent

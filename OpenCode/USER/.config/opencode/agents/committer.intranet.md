@@ -1,7 +1,7 @@
 ---
 description: "Analyzes file changes and automatically generates detailed, standardized Git commit messages."
 mode: subagent
-model: "LiteLLM-glm-5.2/glm-5.2"
+model: "OpenWebUI/glm-5.2"
 reasoningEffort: max
 permission: 
   edit: "deny"
