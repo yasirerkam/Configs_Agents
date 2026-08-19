@@ -7,19 +7,31 @@
       "mode": "primary",
       "model": "LiteLLM-glm-5.2/glm-5.2",
       "reasoningEffort": "max",
-      "textVerbosity": "low"
+      "textVerbosity": "low",
+      "limit": {
+        "context": 262144,
+        "output": 32000
+      }
     },
     "plan": {
       "mode": "primary",
       "model": "LiteLLM-glm-5.2/glm-5.2",
       "reasoningEffort": "max",
-      "textVerbosity": "low"
+      "textVerbosity": "low",
+      "limit": {
+        "context": 262144,
+        "output": 32000
+      }
     },
     "explore": {
       "mode": "subagent",
       "model": "LiteLLM-glm-5.2/glm-5.2",
       "reasoningEffort": "max",
-      "textVerbosity": "low"
+      "textVerbosity": "low",
+      "limit": {
+        "context": 262144,
+        "output": 32000
+      }
     }
   },
   "plugin": [

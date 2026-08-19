@@ -28,194 +28,384 @@
     },
     "agents": {
         "sisyphus": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "hephaestus": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "oracle": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "librarian": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "explore": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "multimodal-looker": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "prometheus": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "metis": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "momus": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "atlas": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "sisyphus-junior": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         }
     },
     "categories": {
         "visual-engineering": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "ultrabrain": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "deep": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "artistry": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "quick": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "unspecified-low": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "unspecified-high": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         },
         "writing": {
-            "model": "LiteLLM-glm-5.2/glm-5.2",
+            "model": "OpenWebUI/glm-5.2",
             "reasoningEffort": "max",
             "textVerbosity": "low",
+            "limit": {
+                "context": 262144,
+                "output": 32000
+            },
             "fallback_models": [
                 {
-                    "model": "OpenWebUI/glm-5.2"
+                    "model": "LiteLLM-glm-5.2/glm-5.2",
+                    "reasoningEffort": "max",
+                    "textVerbosity": "low",
+                    "limit": {
+                        "context": 262144,
+                        "output": 32000
+                    }
                 }
             ]
         }
