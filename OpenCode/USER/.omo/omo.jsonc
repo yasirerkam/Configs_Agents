@@ -11,7 +11,7 @@
     },
     "agents": {
       "sisyphus": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -23,7 +23,7 @@
         ]
       },
       "hephaestus": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -35,7 +35,7 @@
         ]
       },
       "oracle": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -47,7 +47,7 @@
         ]
       },
       "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -59,7 +59,7 @@
         ]
       },
       "explore": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -71,7 +71,7 @@
         ]
       },
       "multimodal-looker": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -83,7 +83,7 @@
         ]
       },
       "prometheus": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -95,7 +95,7 @@
         ]
       },
       "metis": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -107,7 +107,7 @@
         ]
       },
       "momus": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -119,7 +119,7 @@
         ]
       },
       "atlas": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -131,7 +131,7 @@
         ]
       },
       "sisyphus-junior": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -145,7 +145,7 @@
     },
     "categories": {
       "visual-engineering": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -157,7 +157,7 @@
         ]
       },
       "ultrabrain": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -169,7 +169,7 @@
         ]
       },
       "deep": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -181,7 +181,7 @@
         ]
       },
       "artistry": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -193,7 +193,7 @@
         ]
       },
       "quick": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -205,7 +205,7 @@
         ]
       },
       "unspecified-low": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -217,7 +217,7 @@
         ]
       },
       "unspecified-high": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
@@ -229,7 +229,7 @@
         ]
       },
       "writing": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/glm-5.3-flash",
         "reasoningEffort": "max",
         "textVerbosity": "low",
         "fallback_models": [
