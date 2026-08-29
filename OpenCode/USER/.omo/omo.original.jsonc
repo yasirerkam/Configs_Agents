@@ -2,6 +2,13 @@
 {
   "[opencode]": {
     "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/omo.schema.json",
+    "hashline_edit": true,
+    "new_task_system_enabled": true,
+    "team_mode": {
+      "enabled": true,
+      "max_parallel_members": 4,
+      "tmux_visualization": false
+    },
     "agents": {
       "sisyphus": {
         "model": "opencode/claude-opus-5",
@@ -23,11 +30,37 @@
           {
             "model": "opencode/big-pickle"
           }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
         ]
       },
       "hephaestus": {
         "model": "opencode/gpt-5.6-sol",
-        "variant": "medium"
+        "variant": "medium",
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
+        ]
       },
       "oracle": {
         "model": "opencode/gpt-5.6-sol",
@@ -44,6 +77,19 @@
           {
             "model": "opencode-go/glm-5.2"
           }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
         ]
       },
       "librarian": {
@@ -54,6 +100,19 @@
           },
           {
             "model": "opencode-go/minimax-m2.7"
+          }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
           }
         ]
       },
@@ -69,6 +128,19 @@
           {
             "model": "opencode-go/minimax-m2.7"
           }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
         ]
       },
       "multimodal-looker": {
@@ -80,6 +152,19 @@
           },
           {
             "model": "opencode/gpt-5-nano"
+          }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
           }
         ]
       },
@@ -95,6 +180,19 @@
             "model": "opencode/kimi-k3",
             "variant": "high"
           }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
         ]
       },
       "metis": {
@@ -108,6 +206,19 @@
           {
             "model": "opencode/kimi-k3",
             "variant": "low"
+          }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
           }
         ]
       },
@@ -126,6 +237,19 @@
           {
             "model": "opencode-go/glm-5.2"
           }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
         ]
       },
       "atlas": {
@@ -143,6 +267,19 @@
           },
           {
             "model": "opencode-go/minimax-m2.7"
+          }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
           }
         ]
       },
@@ -164,6 +301,19 @@
           },
           {
             "model": "opencode/big-pickle"
+          }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
           }
         ]
       }
@@ -189,15 +339,54 @@
             "model": "opencode/gpt-5.6-sol",
             "variant": "medium"
           }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
         ]
       },
       "ultrabrain": {
         "model": "opencode/gpt-5.6-sol",
-        "variant": "xhigh"
+        "variant": "xhigh",
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
+        ]
       },
       "deep": {
         "model": "opencode/gpt-5.6-sol",
-        "variant": "medium"
+        "variant": "medium",
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
+        ]
       },
       "artistry": {
         "model": "opencode/claude-fable-5",
@@ -215,6 +404,19 @@
             "model": "opencode/claude-opus-5",
             "variant": "high"
           }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
         ]
       },
       "quick": {
@@ -227,6 +429,19 @@
           {
             "model": "opencode-go/minimax-m2.7",
             "variant": "high"
+          }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
           }
         ]
       },
@@ -245,6 +460,19 @@
           {
             "model": "opencode-go/mimo-v2.5-pro"
           }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
         ]
       },
       "unspecified-high": {
@@ -262,6 +490,19 @@
           {
             "model": "opencode-go/mimo-v2.5-pro"
           }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
+          }
         ]
       },
       "writing": {
@@ -278,6 +519,19 @@
           },
           {
             "model": "opencode/gemini-3.6-flash"
+          }
+        ],
+        "models": [
+          {
+            "model": "opencode-go/glm-5.3-flash",
+            "reasoning": "max"
+          },
+          {
+            "model": "opencode/deepseek-v4-flash-free",
+            "reasoning": "max",
+            "provider_options": {
+              "textVerbosity": "low"
+            }
           }
         ]
       }
