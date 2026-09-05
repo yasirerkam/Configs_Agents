@@ -1,102 +1,81 @@
-OMP (Oh-My-Pi) kodlama asistanını sisteminizden tamamen kaldırmak için kurulum betiğinin oluşturduğu ikili dosyaları, yapılandırma klasörünü, ortam değişkeni (PATH) girdisini ve varsa Bun küresel paketini temizlemeniz gerekir.
-
-### Olası Darboğazlar ve Kısıtlar
-
-* **Dosya Kilidi (Process Lock):** Arka planda veya açık bir terminalde çalışan aktif bir `omp` süreci varsa, Windows dosyaların silinmesini engeller (`Access Denied`). Silme işlemine başlamadan önce süreç sonlandırılmalıdır.
-* **Terminal PATH Önbelleği:** Ortam değişkeni temizlense bile o an açık olan PowerShell oturumu eski PATH değerini bellekte tutar. Değişikliğin geçerli olması için terminalin yeniden başlatılması gerekir.
 
 ---
 
-### Tek Seferde Tam Temizlik (PowerShell)
+### Kapsamlı Derin Temizlik Betiği (PowerShell)
 
-Tüm adımları tek seferde çalıştırmak için PowerShell penceresini açıp aşağıdaki bloğu yapıştırabilirsiniz:
+Aşağıdaki komut bloğu, hem kurulum betiğinin hem de Bun ve çalışma zamanının oluşturduğu tüm ek izleri tarayıp temizler:
 
 ```powershell
-# 1. Çalışan süreçleri durdur
-Stop-Process -Name "omp" -Force -ErrorAction SilentlyContinue
+# 1. Aktif süreçleri zorla kapat
+Get-Process -Name "omp*" -ErrorAction SilentlyContinue | Stop-Process -Force
 
-# 2. Bun ile kurulduysa küresel paketi kaldır
+# 2. Kurulum ve çalışma zamanı dizinlerini kaldır
+$pathsToRemove = @(
+    "$env:LOCALAPPDATA\omp",
+    "$env:USERPROFILE\.omp",
+    "$env:USERPROFILE\.bun\bin\omp*",
+    "$env:USERPROFILE\.bun\install\global\node_modules\@oh-my-pi"
+)
+
+foreach ($target in $pathsToRemove) {
+    if (Test-Path $target) {
+        Remove-Item -Path $target -Recurse -Force -ErrorAction SilentlyContinue
+        Write-Host "[Silindi] $target" -ForegroundColor Yellow
+    }
+}
+
+# 3. Bun önbelleğini temizle (Bun yüklüyse)
 if (Get-Command bun -ErrorAction SilentlyContinue) {
+    bun pm cache rm 2>$null
     bun remove -g @oh-my-pi/pi-coding-agent 2>$null
+    Write-Host "[Temizlendi] Bun paket ve önbellek girdileri." -ForegroundColor Yellow
 }
 
-# 3. İkili dosya dizinini sil ($env:LOCALAPPDATA\omp)
+# 4. TEMP dizinindeki yükleyici kalıntılarını temizle
+Get-ChildItem -Path $env:TEMP -Filter "*omp*" -Recurse -ErrorAction SilentlyContinue | 
+    Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+
+# 5. Ortam değişkenlerini (PATH) temizle
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
 $installDir = if ($env:PI_INSTALL_DIR) { $env:PI_INSTALL_DIR } else { "$env:LOCALAPPDATA\omp" }
-if (Test-Path $installDir) {
-    Remove-Item -Path $installDir -Recurse -Force -ErrorAction SilentlyContinue
-}
-
-# 4. Ayar ve oturum klasörünü sil (~/.omp)
-$configDir = Join-Path $env:USERPROFILE ".omp"
-if (Test-Path $configDir) {
-    Remove-Item -Path $configDir -Recurse -Force -ErrorAction SilentlyContinue
-}
-
-# 5. Kullanıcı PATH değişkeninden kaldır
-$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
-if ($userPath -like "*$installDir*") {
-    $newPath = ($userPath -split ';' | Where-Object { $_ -and $_.TrimEnd('\') -ne $installDir.TrimEnd('\') }) -join ';'
-    [Environment]::SetEnvironmentVariable("Path", $newPath, "User")
-}
-
-# 6. Kalan geçici yükleme dosyalarını temizle
-Get-ChildItem -Path $env:TEMP -Filter "omp-install-*" -Directory -ErrorAction SilentlyContinue | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
-
-Write-Host "OMP ve ilişkili tüm dosyalar başarıyla temizlendi." -ForegroundColor Green
-
-```
-
----
-
-### Adım Adım Manuel Kaldırma ve Doğrulama
-
-Süreci adım adım kontrol ederek ilerletmek isterseniz:
-
-1. **Çalışan Süreçleri Kapatma**
-```powershell
-Stop-Process -Name "omp" -Force -ErrorAction SilentlyContinue
-
-```
-
-
-*Doğrulama:* `Get-Process omp -ErrorAction SilentlyContinue` komutunu çalıştırın; hiçbir çıktı dönmemelidir.
-2. **Bun Küresel Paketini Kaldırma** (Kaynak koddan / Bun ile yüklendiyse)
-```powershell
-bun remove -g @oh-my-pi/pi-coding-agent
-
-```
-
-
-*Doğrulama:* `bun pm ls -g` komutunu çalıştırın; paket listesinde `@oh-my-pi/pi-coding-agent` yer almamalıdır.
-3. **Yükleme Dizinini Silme**
-Varsayılan konum `C:\Users\<KullanıcıAdı>\AppData\Local\omp` dizinidir:
-```powershell
-Remove-Item -Path "$env:LOCALAPPDATA\omp" -Recurse -Force
-
-```
-
-
-*Doğrulama:* `Test-Path "$env:LOCALAPPDATA\omp"` komutunu çalıştırın; sonuç `False` dönmelidir.
-4. **Yapılandırma ve Verileri Temizleme**
-Terminal yapılandırması ve ayarlar `C:\Users\<KullanıcıAdı>\.omp` içinde tutulur:
-```powershell
-Remove-Item -Path "$env:USERPROFILE\.omp" -Recurse -Force
-
-```
-
-
-*Doğrulama:* `Test-Path "$env:USERPROFILE\.omp"` komutunu çalıştırın; sonuç `False` dönmelidir.
-5. **PATH Ortam Değişkenini Güncelleme**
-Kullanıcı ortam değişkeninde kayıtlı dizin yolunu kaldırın:
-```powershell
-$installDir = "$env:LOCALAPPDATA\omp"
-$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
-$newPath = ($userPath -split ';' | Where-Object { $_ -and $_.TrimEnd('\') -ne $installDir.TrimEnd('\') }) -join ';'
+$newPath = ($userPath -split ';' | Where-Object { 
+    $_ -and 
+    $_.TrimEnd('\') -ne $installDir.TrimEnd('\')
+}) -join ';'
 [Environment]::SetEnvironmentVariable("Path", $newPath, "User")
 
+Write-Host "Derin temizlik tamamlandı." -ForegroundColor Green
+
+```
+
+---
+
+### Sistemin Tamamen Temizlendiğini Doğrulama
+
+Her bir adımın başarıyla tamamlandığını doğrulamak için yeni bir PowerShell penceresi açıp şu komutları çalıştırabilirsiniz:
+
+1. **Komutun/Çalıştırılabilir Dosyaların Varlığını Kontrol Etme:**
+```powershell
+Get-Command omp -ErrorAction SilentlyContinue
+
 ```
 
 
-*Doğrulama:* `[Environment]::GetEnvironmentVariable("Path", "User") -split ';' | Select-String "omp"` komutunu çalıştırın; boş dönmelidir.
+*Doğrulama:* Hiçbir çıktı dönmemelidir. Eğer bir yol dönüyorsa, dosyanın bulunduğu konumu silmeniz gerekir.
+2. **Dizin Kontrolü:**
+```powershell
+Test-Path "$env:LOCALAPPDATA\omp", "$env:USERPROFILE\.omp", "$env:USERPROFILE\.bun\bin\omp.exe"
 
-İşlem tamamlandıktan sonra terminal oturumunuzu kapatıp yeniden açın. `omp` komutunu yazdığınızda komutun tanınmadığına dair hata alıyorsanız kaldırma işlemi başarıyla tamamlanmıştır.
+```
+
+
+*Doğrulama:* Tüm dönen değerlerin `False` olması gerekir.
+3. **Proje İçi Kalıntı Kontrolü:**
+OMP'yi çalıştırdığınız bir çalışma klasörünüz varsa, o dizinde gizli klasörleri listeleyin:
+```powershell
+Get-ChildItem -Path . -Filter ".omp" -Hidden
+
+```
+
+
+*Doğrulama:* Proje kök dizininde `.omp` klasörü listeleniyorsa `Remove-Item -Recurse -Force .omp` komutuyla manuel olarak kaldırabilirsiniz.
