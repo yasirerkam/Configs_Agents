@@ -28,384 +28,156 @@
     },
     "agents": {
         "sisyphus": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "hephaestus": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "oracle": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "librarian": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "explore": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "multimodal-looker": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "prometheus": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "metis": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "momus": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "atlas": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "sisyphus-junior": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         }
     },
     "categories": {
         "visual-engineering": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "ultrabrain": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "deep": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "artistry": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "quick": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "unspecified-low": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "unspecified-high": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         },
         "writing": {
-            "model": "OpenWebUI/glm-5.2",
-            "reasoningEffort": "max",
-            "textVerbosity": "low",
-            "limit": {
-                "context": 262144,
-                "output": 32000
-            },
+            "model": "OpenWebUI-yeo/glm-5.2",
             "fallback_models": [
                 {
-                    "model": "LiteLLM-glm-5.2/glm-5.2",
-                    "reasoningEffort": "max",
-                    "textVerbosity": "low",
-                    "limit": {
-                        "context": 262144,
-                        "output": 32000
-                    }
+                    "model": "LiteLLM-yeo/glm-5.2"
                 }
             ]
         }

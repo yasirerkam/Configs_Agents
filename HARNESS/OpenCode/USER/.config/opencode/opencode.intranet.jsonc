@@ -2,35 +2,52 @@
   "$schema": "https://opencode.ai/config.json",
   "lsp": {},
   "provider": {
-    "OpenWebUI": {
+    "OpenWebUI-yeo": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Open Web UI",
+      "name": "Open Web UI - yeo",
       "options": {
         "baseURL": "https://gpt.ehsim.net/api/v1"
       },
       "models": {
         "glm-5.2": {
-          "name": "glm-5.2-nvfp4",
-          "limit": {
-            "context": 262144,
-            "output": 32000
+          "name": "glm-5.2-owu",
+          "thinking": true,
+          "reasoningEffort": "max",
+          "textVerbosity": "low",
+          "options": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            }
           }
+          // "limit": {
+          //   "context": 262144,
+          //   "output": 32000
+          // }
         }
       }
     },
-    "LiteLLM-glm-5.2": {
+    "LiteLLM-yeo": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "LiteLLM-glm-5.2",
+      "name": "LiteLLM - yeo",
       "options": {
-        "baseURL": "https://10.0.0.188:4000/v1"
+        "baseURL": "https://10.0.0.188:4000/v1",
+        "apiKey": "sk-asdfasdf"
       },
       "models": {
         "glm-5.2": {
-          "name": "glm-5.2",
-          "limit": {
-            "context": 262144,
-            "output": 32000
+          "name": "glm-5.2-lite",
+          "thinking": true,
+          "reasoningEffort": "max",
+          "textVerbosity": "low",
+          "options": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            }
           }
+          // "limit": {
+          //   "context": 262144,
+          //   "output": 32000
+          // }
         }
       }
     }
@@ -38,33 +55,15 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "LiteLLM-glm-5.2/glm-5.2",
-      "reasoningEffort": "max",
-      "textVerbosity": "low",
-      "limit": {
-        "context": 262144,
-        "output": 32000
-      }
+      "model": "OpenWebUI-yeo/glm-5.2"
     },
     "plan": {
       "mode": "primary",
-      "model": "LiteLLM-glm-5.2/glm-5.2",
-      "reasoningEffort": "max",
-      "textVerbosity": "low",
-      "limit": {
-        "context": 262144,
-        "output": 32000
-      }
+      "model": "OpenWebUI-yeo/glm-5.2"
     },
     "explore": {
       "mode": "subagent",
-      "model": "LiteLLM-glm-5.2/glm-5.2",
-      "reasoningEffort": "max",
-      "textVerbosity": "low",
-      "limit": {
-        "context": 262144,
-        "output": 32000
-      }
+      "model": "OpenWebUI-yeo/glm-5.2"
     }
   },
   "plugin": [
@@ -76,7 +75,7 @@
       "command": [
         "codebase-memory-mcp.exe"
       ],
-      "enabled": true
+      "enabled": false
     }
   }
 }
