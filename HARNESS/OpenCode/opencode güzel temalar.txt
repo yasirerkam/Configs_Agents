@@ -1,12 +1,16 @@
-night owl
+backgroud - black:
 ayu
-github
-material
 aura
-tokyonight
+github
 vercel
+matrix
+
+backgroud - colorful:
+night owl
+material
+tokyonight
+
 carbonfox
 catppuccin
 opencode
 cursor
-matrix
