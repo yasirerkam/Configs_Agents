@@ -9,7 +9,6 @@ backgroud - colorful:
 night owl
 material
 tokyonight
-
 carbonfox
 catppuccin
 opencode
