@@ -23,7 +23,7 @@
   .chead { display:flex; align-items:center; gap:9px; padding:9px 14px; background:var(--bg); color:var(--ink); border-bottom:1px solid rgba(127,127,127,.22); }
   .chead .tname { font-weight:600; font-size:14.5px; }
   .chead code { font:11px Consolas,monospace; background:rgba(127,127,127,.14); border:1px solid rgba(127,127,127,.3); padding:1px 6px; border-radius:5px; }
-  .chead .gid { margin-left:auto; font-size:10px; opacity:.6; text-transform:uppercase; letter-spacing:.08em; }
+  .chead .gid { font-size:10px; opacity:.6; text-transform:uppercase; letter-spacing:.08em; }
   .win { background:var(--bg); color:var(--ink); }
   .titlebar { display:flex; align-items:center; gap:7px; padding:7px 12px; border-bottom:1px solid rgba(127,127,127,.18); min-height:32px; }
   .tdot { width:10px; height:10px; border-radius:50%; background:var(--ink); opacity:.25; flex:none; }
@@ -86,6 +86,17 @@
   .lrow .sw { width:10px; height:10px; border-radius:3px; border:1px solid rgba(127,127,127,.4); flex:none; }
   .lrow .sw.off { background:transparent; }
   .lrow code { margin-left:auto; color:#7d8697; font:10px Consolas,monospace; flex:none; }
+  .selbtn { margin-left:auto; background:rgba(127,127,127,.12); border:1px solid rgba(127,127,127,.35); color:var(--tw); border-radius:6px; padding:3px 9px; font:11px "Segoe UI",system-ui,sans-serif; cursor:pointer; font-weight:500; }
+  .selbtn:hover { border-color:rgba(127,127,127,.65); }
+  .selbtn.on { background:var(--pri); border-color:transparent; color:var(--bg); font-weight:600; }
+  #cwrap { margin-bottom:8px; }
+  .cmp-wrap { border:1px solid #3a4658; border-radius:12px; background:#0f131a; padding:12px 14px; }
+  .cmp-head { display:flex; align-items:center; gap:10px; margin-bottom:10px; font-size:13px; color:#c9d1d9; font-weight:600; }
+  .cmp-head .n { color:var(--ptw); font-size:12px; font-weight:400; }
+  .cmp-head button { margin-left:auto; background:transparent; border:1px solid var(--pline); color:var(--ptw); border-radius:6px; padding:3px 10px; font:11px "Segoe UI",system-ui,sans-serif; cursor:pointer; }
+  .cmp-head button:hover { color:#c9d1d9; border-color:#3a4453; }
+  .cmp-row { display:flex; gap:14px; overflow-x:auto; padding-bottom:6px; }
+  .cmp-row .card { flex:0 0 auto; width:430px; border-radius:10px; }
 </style>
 </head>
 <body>
@@ -98,6 +109,7 @@
     <div>• Avatar &amp; brand → <b>primary</b> &nbsp;•&nbsp; Başlık "Deployment Rehberi", link, listeler → <b>markdown-*</b> &nbsp;•&nbsp; Kod bloğu → <b>syntax-*</b> (keyword, dizgi, ilkel, tip, özellik, sabit, değişken, operatör, noktalama, yorum)</div>
     <div>• Diff paneli → <b>diffAdd / diffDelete</b> &nbsp;•&nbsp; Alt durum çubuğu → <b>success / warning / error / info</b> &nbsp;•&nbsp; Başlık çubuğu "aktif" rozeti → <b>info-ye yakın</b> (interactive)</div>
   </div>
+  <div id="cwrap" style="display:none"></div>
   <div id="root"></div>
 </div>
 <script>
@@ -497,6 +509,8 @@ const CHAIN = {
   mh:'pri', mt:'ink', ml:'pri', mlt:'inter', mc:'acc', mb:'tw', me:'war', ms:'ink',
   mhr:'tw', mli:'pri', mle:'acc', mi:'pri', mit:'acc', mcb:'ink'
 };
+const sel = new Set();
+
 function resolve(t){
   const c = Object.assign({}, t);
   for (const k in CHAIN) {
@@ -571,20 +585,48 @@ function legend(t, c){
 }
 function card(t){
   const c = resolve(t);
+  const on = sel.has(t.id);
+  const btn = '<button class="selbtn' + (on ? ' on' : '') + '" data-id="' + t.id + '" title="Yan yana karşılaştırmaya ekle/çıkar">' + (on ? '✓ Seçildi' : '＋ Karşılaştır') + '</button>';
   const vars = VARS.map(function(k){ return '--' + k + ':' + c[k]; }).join(';') + ';--sco:' + (t.sc ? 1 : 0.6);
   return '<div class="card" style="' + vars + '">' +
-    '<div class="chead"><span class="tname">' + t.name + '</span><code>' + c.bg + '</code><span class="gid">' + t.id + '</span></div>' +
+    '<div class="chead"><span class="tname">' + t.name + '</span><code>' + c.bg + '</code>' + btn + '<span class="gid">' + t.id + '</span></div>' +
     mock() +
     legend(t, c) +
     '</div>';
 }
-const black = THEMES.filter(function(t){ return t.g === 'black'; });
-const color = THEMES.filter(function(t){ return t.g === 'color'; });
-document.getElementById('root').innerHTML =
-  '<h2 class="sec">Arka planı siyah / koyu gri <span>· ' + black.length + ' tema</span></h2>' +
-  '<div class="grid">' + black.map(card).join('') + '</div>' +
-  '<h2 class="sec">Arka planı renkli <span>· ' + color.length + ' tema</span></h2>' +
-  '<div class="grid">' + color.map(card).join('') + '</div>';
+function section(title, items){
+  return '<h2 class="sec">' + title + ' <span>· ' + items.length + ' tema</span></h2>' +
+    '<div class="grid">' + items.map(card).join('') + '</div>';
+}
+function renderCompare(){
+  const wrap = document.getElementById('cwrap');
+  const items = THEMES.filter(function(t){ return sel.has(t.id); });
+  if (!items.length) { wrap.style.display = 'none'; wrap.innerHTML = ''; return; }
+  wrap.style.display = '';
+  wrap.innerHTML = '<div class="cmp-wrap"><div class="cmp-head">Yan yana karşılaştırma <span class="n">' +
+    items.length + ' tema</span><button id="cleasel">Seçimi temizle</button></div>' +
+    '<div class="cmp-row">' + items.map(card).join('') + '</div></div>';
+}
+function renderAll(){
+  document.getElementById('root').innerHTML =
+    section('Arka planı siyah / koyu gri', THEMES.filter(function(t){ return t.g === 'black'; })) +
+    section('Arka planı renkli', THEMES.filter(function(t){ return t.g === 'color'; }));
+  renderCompare();
+}
+document.addEventListener('click', function(e){
+  let el = e.target;
+  if (el.nodeType !== 1) { el = el.parentElement; }
+  if (!el || !el.closest) { return; }
+  const b = el.closest('.selbtn');
+  if (b) {
+    const id = b.getAttribute('data-id');
+    if (sel.has(id)) { sel.delete(id); } else { sel.add(id); }
+    renderAll();
+    return;
+  }
+  if (el.closest('#cleasel')) { sel.clear(); renderAll(); }
+});
+renderAll();
 </script>
 </body>
 </html>
