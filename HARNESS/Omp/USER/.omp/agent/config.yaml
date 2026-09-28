@@ -1,0 +1,30 @@
+modelRoles:
+  default: OpenWebUI/glm-5.2:max
+  smol: OpenWebUI-yeo/glm-5.2
+  slow: OpenWebUI-yeo/glm-5.2:max
+  vision: OpenWebUI-yeo/glm-5.2:max
+  plan: OpenWebUI-yeo/glm-5.2:max
+  commit: OpenWebUI-yeo/glm-5.2
+  tiny: OpenWebUI-yeo/glm-5.2
+  task: OpenWebUI-yeo/glm-5.2:max
+  advisor: OpenWebUI-yeo/glm-5.2:medium
+modelProviderOrder:
+  - LiteLLM-yeo
+  - OpenWebUI-yeo
+cycleOrder:
+  - smol
+  - default
+  - slow
+defaultThinkingLevel: max
+symbolPreset: unicode
+composer:
+  shape: claude
+  tokenRate: false
+theme:
+  dark: titanium
+  light: light
+setupVersion: 2
+statusLine:
+  preset: default
+  separator: powerline-thin
+  contextLine: embedded
