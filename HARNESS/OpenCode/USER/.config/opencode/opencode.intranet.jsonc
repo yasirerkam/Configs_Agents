@@ -26,9 +26,9 @@
         }
       }
     },
-    "LiteLLM-yeo": {
+    "LiteLLM-ada-yeo": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "LiteLLM - yeo",
+      "name": "LiteLLM-ada-yeo",
       "options": {
         "baseURL": "https://10.0.0.188:4000/v1",
         "apiKey": "sk-asdfasdf"
@@ -48,6 +48,34 @@
           //   "context": 262144,
           //   "output": 32000
           // }
+        }
+      }
+    },
+    "LiteLLM-dgx-yeo": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LiteLLM-dgx-yeo",
+      "options": {
+        "baseURL": "http://10.91.0.145:4000/v1",
+        "apiKey": "sk-Zpl9ae8EnfZ0Dp3c8kUQwA"
+      },
+      "models": {
+        "qwen3.8-27b": {
+          "name": "qwen3.8-27b",
+          "thinking": true,
+          "options": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            }
+          },
+            "modalities": {
+              "input": [
+                "text",
+                "image"
+              ],
+              "output": [
+                "text"
+              ]
+            }
         }
       }
     }
