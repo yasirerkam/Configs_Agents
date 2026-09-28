@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenCode Temaları — UI Önizleme Galerisi</title>
+<style>
+  :root { --page:#0b0d11; --pt:#c9d1d9; --ptw:#8a93a5; --pline:#232a35; }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--page); color:var(--pt); font:14px/1.5 "Segoe UI", system-ui, sans-serif; }
+  .wrap { max-width:1440px; margin:0 auto; padding:28px 20px 64px; }
+  h1 { color:#eef1f6; font-size:22px; margin:0 0 6px; font-weight:600; }
+  .sub { color:var(--ptw); font-size:13px; margin:0 0 6px; }
+  .sub code { background:#161b24; border:1px solid var(--pline); padding:1px 5px; border-radius:4px; font:12px Consolas,monospace; color:#c9d1d9; }
+  .zones { background:#0f131a; border:1px solid var(--pline); border-radius:10px; padding:10px 14px; font-size:12.5px; color:var(--ptw); margin:12px 0 4px; }
+  .zones b { color:#c9d1d9; }
+  .zones div { margin:2px 0; }
+  h2.sec { font-size:16px; color:#eef1f6; border-bottom:1px solid var(--pline); padding-bottom:7px; margin:34px 0 14px; font-weight:600; }
+  h2.sec span { color:var(--ptw); font-weight:400; font-size:12.5px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(470px,1fr)); gap:18px; }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; } }
+  .card { border:1px solid var(--pline); border-radius:12px; overflow:hidden; background:#10131a; margin:0; }
+  .chead { display:flex; align-items:center; gap:9px; padding:9px 14px; background:var(--bg); color:var(--ink); border-bottom:1px solid rgba(127,127,127,.22); }
+  .chead .tname { font-weight:600; font-size:14.5px; }
+  .chead code { font:11px Consolas,monospace; background:rgba(127,127,127,.14); border:1px solid rgba(127,127,127,.3); padding:1px 6px; border-radius:5px; }
+  .chead .gid { margin-left:auto; font-size:10px; opacity:.6; text-transform:uppercase; letter-spacing:.08em; }
+  .win { background:var(--bg); color:var(--ink); }
+  .titlebar { display:flex; align-items:center; gap:7px; padding:7px 12px; border-bottom:1px solid rgba(127,127,127,.18); min-height:32px; }
+  .tdot { width:10px; height:10px; border-radius:50%; background:var(--ink); opacity:.25; flex:none; }
+  .wintitle { font-size:11.5px; opacity:.75; margin-left:8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .tchip { margin-left:auto; display:flex; align-items:center; gap:5px; font-size:10.5px; color:var(--inter); flex:none; }
+  .tchip i { width:7px; height:7px; border-radius:50%; background:var(--suc); display:inline-block; }
+  .body2 { display:grid; grid-template-columns:148px minmax(0,1fr); min-height:280px; }
+  @media (max-width:680px) { .body2 { grid-template-columns:1fr; } .side { display:none; } }
+  .side { border-right:1px solid rgba(127,127,127,.18); padding:10px 8px; font-size:11.5px; display:flex; flex-direction:column; gap:5px; }
+  .proj { font-weight:600; padding:0 6px 4px; opacity:.9; }
+  .sess { padding:4px 9px; border-radius:6px; color:var(--tw); border:1px solid transparent; display:flex; gap:6px; align-items:center; }
+  .sess.on { background:color-mix(in srgb, var(--inter) 15%, transparent); border-color:color-mix(in srgb, var(--inter) 40%, transparent); color:var(--inter); }
+  .sess i { width:6px; height:6px; border-radius:50%; background:currentColor; opacity:.55; flex:none; }
+  .snote { margin-top:auto; font-size:10px; color:var(--tw); opacity:.7; padding:0 6px; }
+  .chat { padding:12px 13px; display:flex; flex-direction:column; gap:10px; font-size:12.5px; min-width:0; }
+  .msg { display:flex; gap:8px; }
+  .msg.user { justify-content:flex-end; }
+  .bub { max-width:85%; padding:6px 10px; border-radius:9px; background:color-mix(in srgb, var(--inter) 16%, transparent); border:1px solid color-mix(in srgb, var(--inter) 38%, transparent); color:var(--ink); }
+  .av { width:22px; height:22px; border-radius:7px; background:var(--pri); color:var(--bg); font-weight:700; font-size:9.5px; display:flex; align-items:center; justify-content:center; flex:none; letter-spacing:.02em; }
+  .md { min-width:0; flex:1; }
+  .md h1 { color:var(--mh); font-size:14px; margin:0 0 5px; font-weight:600; }
+  .md p { margin:0 0 6px; color:var(--mt); }
+  .md b { color:var(--ms); font-weight:700; }
+  .md i { color:var(--me); }
+  .md a { color:var(--ml); text-decoration:underline; text-underline-offset:2px; text-decoration-color:color-mix(in srgb, var(--ml) 40%, transparent); }
+  .md code.ic { background:rgba(127,127,127,.16); color:var(--mc); padding:0 4px; border-radius:4px; font:11.5px Consolas,monospace; }
+  .codeblock { background:color-mix(in srgb, var(--ink) 7%, transparent); border:1px solid rgba(127,127,127,.2); border-radius:8px; padding:8px 10px; margin:7px 0; font:11.5px/1.7 Consolas,"Cascadia Mono",monospace; white-space:pre; overflow-x:auto; color:var(--mcb); }
+  .codeblock .c { color:var(--sc); opacity:var(--sco,1); }
+  .codeblock .k { color:var(--skw); }
+  .codeblock .s { color:var(--sstr); }
+  .codeblock .n { color:var(--snum); }
+  .codeblock .t { color:var(--sty); }
+  .codeblock .p { color:var(--sprop); }
+  .codeblock .co { color:var(--sconst); }
+  .codeblock .v { color:var(--svar); }
+  .codeblock .o { color:var(--stop); }
+  .codeblock .u { color:var(--spun); }
+  .codeblock .ob { color:var(--sobj); }
+  .md blockquote { margin:6px 0; padding:3px 10px; border-left:2px solid var(--mb); color:var(--mb); font-size:11.5px; }
+  .md ul { margin:5px 0 0; padding-left:16px; }
+  .md li { color:var(--mt); }
+  .md li::marker { color:var(--mli); }
+  .md hr { border:none; border-top:1px solid var(--mhr); margin:8px 0 2px; opacity:.8; }
+  .diff { border:1px solid rgba(127,127,127,.2); border-radius:8px; overflow:hidden; margin-top:2px; }
+  .dhead { display:flex; gap:8px; align-items:center; padding:5px 10px; font:11px Consolas,monospace; color:var(--tw); border-bottom:1px solid rgba(127,127,127,.14); }
+  .dhead .plus { color:var(--add); }
+  .dhead .minus { color:var(--del); }
+  .dl { font:11px/1.6 Consolas,monospace; padding:2px 10px; white-space:pre; overflow-x:auto; }
+  .dl.add { background:color-mix(in srgb, var(--add) 13%, transparent); color:var(--add); }
+  .dl.del { background:color-mix(in srgb, var(--del) 13%, transparent); color:var(--del); }
+  .statusbar { display:flex; gap:14px; flex-wrap:wrap; padding:6px 12px; border-top:1px solid rgba(127,127,127,.18); font-size:10.5px; color:var(--tw); }
+  .statusbar span { display:flex; gap:5px; align-items:center; }
+  .statusbar i { width:8px; height:8px; border-radius:50%; display:inline-block; }
+  .statusbar .ok i { background:var(--suc); }
+  .statusbar .wn i { background:var(--war); }
+  .statusbar .er i { background:var(--err); }
+  .statusbar .in i { background:var(--inf); }
+  .legend { padding:10px 13px; background:#0d1016; border-top:1px solid var(--pline); display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:3px 12px; font-size:11px; }
+  .lrow { display:flex; align-items:center; gap:6px; color:var(--ptw); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .lrow .sw { width:10px; height:10px; border-radius:3px; border:1px solid rgba(127,127,127,.4); flex:none; }
+  .lrow .sw.off { background:transparent; }
+  .lrow code { margin-left:auto; color:#7d8697; font:10px Consolas,monospace; flex:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>OpenCode Temaları — UI Önizleme</h1>
+  <p class="sub">Renkler <code>fetched/*.json</code> dosyalarındaki <b>dark</b> paletlerinden birebir alınır. Her kart, OpenCode masaüstü arayüzünün mock-up'ıdır: aynı içerik, tema renkleriyle. Tema bir rolü tanımlamamışsa uygulama kendi fallback zincirini uygular (ör. <code>diffAdd</code> boşsa soldurulmuş <code>success</code>). Kart altındaki efsanede "—" = tema o rengi tanımlamamış; swatch renk, mock'ta fiilen kullanılan rengi gösterir.</p>
+  <div class="zones">
+    <b>Mockup bölgeleri → renk rolleri:</b>
+    <div>• Pencereler arka fonu &amp; içerik metni → <b>neutral (bg)</b> + <b>ink</b> &nbsp;•&nbsp; Kenar çubuğu soluk öğeler → <b>text-weak</b> &nbsp;•&nbsp; Aktif oturum / odak / baloncuk → <b>interactive</b></div>
+    <div>• Avatar &amp; brand → <b>primary</b> &nbsp;•&nbsp; Başlık "Deployment Rehberi", link, listeler → <b>markdown-*</b> &nbsp;•&nbsp; Kod bloğu → <b>syntax-*</b> (keyword, dizgi, ilkel, tip, özellik, sabit, değişken, operatör, noktalama, yorum)</div>
+    <div>• Diff paneli → <b>diffAdd / diffDelete</b> &nbsp;•&nbsp; Alt durum çubuğu → <b>success / warning / error / info</b> &nbsp;•&nbsp; Başlık çubuğu "aktif" rozeti → <b>info-ye yakın</b> (interactive)</div>
+  </div>
+  <div id="root"></div>
+</div>
+<script>
+const THEMES = [
+    {
+        "id":  "ayu",
+        "name":  "Ayu",
+        "g":  "black",
+        "bg":  "#0f1419",
+        "ink":  "#d6dae0",
+        "pri":  "#3fb7e3",
+        "acc":  "#f2856f",
+        "suc":  "#78d05c",
+        "war":  "#e4a75c",
+        "err":  "#f58572",
+        "inf":  "#66c6f1",
+        "add":  "#59c57c",
+        "del":  "#f58572",
+        "sc":  "#5a6673",
+        "skw":  "#ff8f40",
+        "sstr":  "#aad94c",
+        "snum":  "#ffb454",
+        "sty":  "#59c2ff",
+        "sprop":  "#39bae6",
+        "sconst":  "#d2a6ff"
+    },
+    {
+        "id":  "aura",
+        "name":  "Aura",
+        "g":  "black",
+        "bg":  "#15141b",
+        "ink":  "#edecee",
+        "pri":  "#a277ff",
+        "acc":  "#ff6767",
+        "suc":  "#61ffca",
+        "war":  "#ffca85",
+        "err":  "#ff6767",
+        "inf":  "#82e2ff",
+        "add":  "#61ffca",
+        "del":  "#ff6767",
+        "sc":  "#6d6a7e",
+        "skw":  "#a277ff",
+        "sstr":  "#61ffca",
+        "snum":  "#82e2ff",
+        "sty":  "#61ffca",
+        "sprop":  "#ffca85",
+        "sconst":  "#ff6767"
+    },
+    {
+        "id":  "github",
+        "name":  "GitHub",
+        "g":  "black",
+        "bg":  "#0d1117",
+        "ink":  "#c9d1d9",
+        "pri":  "#58a6ff",
+        "acc":  "#39c5cf",
+        "suc":  "#3fb950",
+        "war":  "#e3b341",
+        "err":  "#f85149",
+        "inf":  "#d29922",
+        "tw":  "#8b949e",
+        "sc":  "#8b949e",
+        "skw":  "#ff7b72",
+        "sstr":  "#39c5cf",
+        "snum":  "#bc8cff",
+        "sty":  "#d29922",
+        "sprop":  "#39c5cf",
+        "sconst":  "#58a6ff",
+        "svar":  "#d29922",
+        "stop":  "#ff7b72",
+        "spun":  "#c9d1d9",
+        "sobj":  "#d29922",
+        "mh":  "#58a6ff",
+        "mt":  "#c9d1d9",
+        "ml":  "#58a6ff",
+        "mlt":  "#39c5cf",
+        "mc":  "#ff7b72",
+        "mb":  "#8b949e",
+        "me":  "#e3b341",
+        "ms":  "#d29922",
+        "mhr":  "#30363d",
+        "mli":  "#58a6ff",
+        "mle":  "#39c5cf",
+        "mi":  "#58a6ff",
+        "mit":  "#39c5cf",
+        "mcb":  "#c9d1d9"
+    },
+    {
+        "id":  "vercel",
+        "name":  "Vercel",
+        "g":  "black",
+        "bg":  "#000000",
+        "ink":  "#EDEDED",
+        "pri":  "#0070F3",
+        "acc":  "#8E4EC6",
+        "suc":  "#46A758",
+        "war":  "#FFB224",
+        "err":  "#E5484D",
+        "inf":  "#52A8FF",
+        "inter":  "#52A8FF",
+        "add":  "#63C46D",
+        "del":  "#FF6166",
+        "tw":  "#878787",
+        "sc":  "#878787",
+        "skw":  "#F75590",
+        "sstr":  "#63C46D",
+        "snum":  "#BF7AF0",
+        "sty":  "#0AC7AC",
+        "sprop":  "#0AC7AC",
+        "sconst":  "#F2A700",
+        "svar":  "#52A8FF",
+        "stop":  "#F75590",
+        "spun":  "#EDEDED",
+        "sobj":  "#52A8FF",
+        "mh":  "#BF7AF0",
+        "mt":  "#EDEDED",
+        "ml":  "#52A8FF",
+        "mlt":  "#0AC7AC",
+        "mc":  "#63C46D",
+        "mb":  "#878787",
+        "me":  "#F2A700",
+        "ms":  "#F75590",
+        "mhr":  "#454545",
+        "mli":  "#EDEDED",
+        "mle":  "#52A8FF",
+        "mi":  "#0AC7AC",
+        "mit":  "#50E3C2",
+        "mcb":  "#EDEDED"
+    },
+    {
+        "id":  "matrix",
+        "name":  "Matrix",
+        "g":  "black",
+        "bg":  "#0a0e0a",
+        "ink":  "#62ff94",
+        "pri":  "#2eff6a",
+        "acc":  "#c770ff",
+        "suc":  "#62ff94",
+        "war":  "#e6ff57",
+        "err":  "#ff4b4b",
+        "inf":  "#30b3ff",
+        "inter":  "#30b3ff",
+        "add":  "#77ffaf",
+        "del":  "#ff7171",
+        "tw":  "#8ca391",
+        "sc":  "#8ca391",
+        "skw":  "#c770ff",
+        "sstr":  "#1cc24b",
+        "snum":  "#30b3ff",
+        "sty":  "#e6ff57",
+        "sprop":  "#24f6d9",
+        "sconst":  "#ffa83d",
+        "svar":  "#62ff94",
+        "stop":  "#24f6d9",
+        "spun":  "#62ff94",
+        "sobj":  "#62ff94",
+        "mh":  "#00efff",
+        "mt":  "#62ff94",
+        "ml":  "#30b3ff",
+        "mlt":  "#24f6d9",
+        "mc":  "#1cc24b",
+        "mb":  "#8ca391",
+        "me":  "#ffa83d",
+        "ms":  "#e6ff57",
+        "mhr":  "#8ca391",
+        "mli":  "#30b3ff",
+        "mle":  "#24f6d9",
+        "mi":  "#30b3ff",
+        "mit":  "#24f6d9",
+        "mcb":  "#62ff94"
+    },
+    {
+        "id":  "opencode",
+        "name":  "OpenCode",
+        "g":  "black",
+        "bg":  "#0a0a0a",
+        "ink":  "#eeeeee",
+        "pri":  "#fab283",
+        "acc":  "#9d7cd8",
+        "suc":  "#7fd88f",
+        "war":  "#f5a742",
+        "err":  "#e06c75",
+        "inf":  "#56b6c2",
+        "add":  "#b8db87",
+        "del":  "#e26a75",
+        "tw":  "#808080",
+        "sc":  "#808080",
+        "skw":  "#9d7cd8",
+        "sstr":  "#7fd88f",
+        "snum":  "#fab283",
+        "sty":  "#e5c07b",
+        "sprop":  "#56b6c2",
+        "sconst":  "#f5a742",
+        "svar":  "#e06c75",
+        "stop":  "#56b6c2",
+        "spun":  "#eeeeee",
+        "sobj":  "#e06c75",
+        "mh":  "#9d7cd8",
+        "mt":  "#eeeeee",
+        "ml":  "#fab283",
+        "mlt":  "#56b6c2",
+        "mc":  "#7fd88f",
+        "mb":  "#e5c07b",
+        "me":  "#e5c07b",
+        "ms":  "#f5a742",
+        "mhr":  "#808080",
+        "mli":  "#fab283",
+        "mle":  "#56b6c2",
+        "mi":  "#fab283",
+        "mit":  "#56b6c2",
+        "mcb":  "#eeeeee"
+    },
+    {
+        "id":  "cursor",
+        "name":  "Cursor",
+        "g":  "black",
+        "bg":  "#181818",
+        "ink":  "#e4e4e4",
+        "pri":  "#88c0d0",
+        "acc":  "#88c0d0",
+        "suc":  "#3fa266",
+        "war":  "#f1b467",
+        "err":  "#e34671",
+        "inf":  "#81a1c1",
+        "inter":  "#82D2CE",
+        "add":  "#70b489",
+        "del":  "#fc6b83",
+        "tw":  "#e4e4e45e",
+        "sc":  "#e4e4e45e",
+        "skw":  "#82D2CE",
+        "sstr":  "#E394DC",
+        "snum":  "#EFB080",
+        "sty":  "#EFB080",
+        "sprop":  "#81a1c1",
+        "sconst":  "#F8C762",
+        "svar":  "#e4e4e4",
+        "stop":  "#e4e4e4",
+        "spun":  "#e4e4e4",
+        "sobj":  "#e4e4e4",
+        "mh":  "#AAA0FA",
+        "mt":  "#e4e4e4",
+        "ml":  "#82D2CE",
+        "mlt":  "#81a1c1",
+        "mc":  "#E394DC",
+        "mb":  "#e4e4e45e",
+        "me":  "#82D2CE",
+        "ms":  "#F8C762",
+        "mhr":  "#e4e4e45e",
+        "mli":  "#e4e4e4",
+        "mle":  "#88c0d0",
+        "mi":  "#88c0d0",
+        "mit":  "#81a1c1",
+        "mcb":  "#e4e4e4"
+    },
+    {
+        "id":  "carbonfox",
+        "name":  "Carbonfox",
+        "g":  "black",
+        "bg":  "#393939",
+        "ink":  "#f2f4f8",
+        "pri":  "#33b1ff",
+        "acc":  "#ff8389",
+        "suc":  "#42be65",
+        "war":  "#f1c21b",
+        "err":  "#ff8389",
+        "inf":  "#78a9ff",
+        "inter":  "#4589ff",
+        "add":  "#42be65",
+        "del":  "#ff8389",
+        "sc":  "#6f6f6f",
+        "skw":  "#be95ff",
+        "sstr":  "#42be65",
+        "snum":  "#33b1ff",
+        "sty":  "#f1c21b",
+        "sprop":  "#78a9ff",
+        "sconst":  "#ff8389"
+    },
+    {
+        "id":  "nightowl",
+        "name":  "Night Owl",
+        "g":  "color",
+        "bg":  "#011627",
+        "ink":  "#d6deeb",
+        "pri":  "#82aaff",
+        "acc":  "#f78c6c",
+        "suc":  "#c5e478",
+        "war":  "#ecc48d",
+        "err":  "#ef5350",
+        "inf":  "#82aaff",
+        "add":  "#c5e478",
+        "del":  "#ef5350",
+        "sc":  "#637777",
+        "skw":  "#c792ea",
+        "sstr":  "#ecc48d",
+        "snum":  "#82aaff",
+        "sconst":  "#f78c6c"
+    },
+    {
+        "id":  "material",
+        "name":  "Material",
+        "g":  "color",
+        "bg":  "#263238",
+        "ink":  "#eeffff",
+        "pri":  "#82aaff",
+        "acc":  "#89ddff",
+        "suc":  "#c3e88d",
+        "war":  "#ffcb6b",
+        "err":  "#f07178",
+        "inf":  "#ffcb6b",
+        "inter":  "#89ddff",
+        "tw":  "#546e7a",
+        "sc":  "#546e7a",
+        "skw":  "#c792ea",
+        "sstr":  "#c3e88d",
+        "snum":  "#82aaff",
+        "sty":  "#ffcb6b",
+        "sprop":  "#c792ea",
+        "sconst":  "#ffcb6b",
+        "svar":  "#eeffff",
+        "stop":  "#89ddff",
+        "spun":  "#eeffff",
+        "sobj":  "#eeffff",
+        "mh":  "#82aaff",
+        "mt":  "#eeffff",
+        "ml":  "#89ddff",
+        "mlt":  "#c792ea",
+        "mc":  "#c3e88d",
+        "mb":  "#546e7a",
+        "me":  "#ffcb6b",
+        "ms":  "#ffcb6b",
+        "mhr":  "#37474f",
+        "mli":  "#82aaff",
+        "mle":  "#89ddff",
+        "mi":  "#89ddff",
+        "mit":  "#c792ea",
+        "mcb":  "#eeffff"
+    },
+    {
+        "id":  "tokyonight",
+        "name":  "Tokyonight",
+        "g":  "color",
+        "bg":  "#1a1b26",
+        "ink":  "#c0caf5",
+        "pri":  "#7aa2f7",
+        "acc":  "#ff9e64",
+        "suc":  "#9ece6a",
+        "war":  "#e0af68",
+        "err":  "#f7768e",
+        "inf":  "#7dcfff",
+        "add":  "#41a6b5",
+        "del":  "#c34043",
+        "sc":  "#565f89",
+        "skw":  "#bb9af7",
+        "snum":  "#7aa2f7",
+        "sprop":  "#7dcfff",
+        "sconst":  "#ff9e64"
+    },
+    {
+        "id":  "catppuccin",
+        "name":  "Catppuccin",
+        "g":  "color",
+        "bg":  "#1e1e2e",
+        "ink":  "#cdd6f4",
+        "pri":  "#b4befe",
+        "acc":  "#f38ba8",
+        "suc":  "#a6d189",
+        "war":  "#f4b8e4",
+        "err":  "#f38ba8",
+        "inf":  "#89dceb",
+        "add":  "#94e2d5",
+        "del":  "#f38ba8",
+        "sc":  "#6c7086",
+        "skw":  "#cba6f7",
+        "snum":  "#89b4fa",
+        "sconst":  "#fab387"
+    }
+];
+
+const LABELS = [
+  ['bg','Arka plan (neutral)'],['ink','Ana metin'],['tw','Soluk metin (text-weak)'],
+  ['pri','Primary'],['acc','Accent'],['inter','İnteraktif'],['suc','Başarı'],['war','Uyarı'],
+  ['err','Hata'],['inf','Bilgi'],['add','Diff +'],['del','Diff −'],
+  ['skw','Kilit kelime (keyword)'],['sstr','Dizgi (string)'],['snum','İlkel (primitive)'],
+  ['sty','Tip (type)'],['sprop','Özellik (property)'],['sconst','Sabit (constant)'],
+  ['svar','Değişken (variable)'],['stop','Operatör'],['spun','Noktalama'],['sobj','Nesne (object)'],['sc','Yorum (comment)'],
+  ['mh','MD başlık'],['mt','MD gövde metni'],['ml','MD bağlantı'],['mlt','MD bağlantı metni'],
+  ['mc','MD satır içi kod'],['mb','MD alıntı'],['me','MD italik'],['ms','MD kalın'],
+  ['mhr','MD ayraç (hr)'],['mli','MD madde işareti'],['mle','MD sıralı liste'],['mi','MD görsel'],['mit','MD görsel metni'],['mcb','MD kod bloğu']
+];
+const VARS = ['bg','ink','tw','pri','acc','inter','suc','war','err','inf','add','del',
+  'skw','sstr','snum','sty','sprop','sconst','svar','stop','spun','sobj','sc',
+  'mh','mt','ml','mlt','mc','mb','me','ms','mhr','mli','mle','mi','mit','mcb'];
+const CHAIN = {
+  tw:'ink', inter:'pri', add:'suc', del:'err',
+  sc:'ink', skw:'pri', sstr:'suc', snum:'pri', sty:'acc', sprop:'acc', sconst:'war',
+  svar:'ink', stop:'ink', spun:'ink', sobj:'pri',
+  mh:'pri', mt:'ink', ml:'pri', mlt:'inter', mc:'acc', mb:'tw', me:'war', ms:'ink',
+  mhr:'tw', mli:'pri', mle:'acc', mi:'pri', mit:'acc', mcb:'ink'
+};
+function resolve(t){
+  const c = Object.assign({}, t);
+  for (const k in CHAIN) {
+    if (!c[k]) {
+      let f = CHAIN[k];
+      while (!c[f]) { f = CHAIN[f] || 'ink'; }
+      c[k] = c[f];
+    }
+  }
+  return c;
+}
+function mock(){
+  return '<div class="win">' +
+  '<div class="titlebar"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>' +
+  '<span class="wintitle">opencode — deployment-rehberi</span>' +
+  '<span class="tchip"><i></i>aktif</span></div>' +
+  '<div class="body2">' +
+  '<aside class="side">' +
+  '<div class="proj">deployment-rehberi</div>' +
+  '<div class="sess on"><i></i>oturum-1</div>' +
+  '<div class="sess"><i></i>oturum-2</div>' +
+  '<div class="sess"><i></i>oturum-3</div>' +
+  '<div class="snote">3 oturum · 1 aktif</div>' +
+  '</aside>' +
+  '<main class="chat">' +
+  '<div class="msg user"><div class="bub">Kullanıcı: deployma adımlarını özetle</div></div>' +
+  '<div class="msg">' +
+  '<div class="av">OC</div>' +
+  '<div class="md">' +
+  '<h1>Deployment Rehberi</h1>' +
+  '<p>Sunucuya <b>öncelikle</b> <i>hazırlık</i> adımını uygulayın, <code class="ic">config check</code> çalıştırın ve <a href="#">dokümantasyona</a> göz atın.</p>' +
+  '<div class="codeblock"><span class="c">// deployment pipeline</span>\n' +
+  '<span class="k">const</span> <span class="co">VERSION</span> <span class="o">=</span> <span class="s">"2.1.0"</span>\n' +
+  '<span class="k">interface</span> <span class="t">App</span> <span class="u">{</span>\n' +
+  '  <span class="p">id</span><span class="u">:</span> <span class="t">number</span>\n' +
+  '  <span class="p">name</span><span class="u">:</span> <span class="t">string</span>\n' +
+  '<span class="u">}</span>\n' +
+  '<span class="k">function</span> <span class="v">deploy</span><span class="u">(</span><span class="v">app</span><span class="u">,</span> <span class="v">dryRun</span> <span class="u">=</span> <span class="n">false</span><span class="u">)</span> <span class="u">{</span>\n' +
+  '  <span class="k">const</span> <span class="v">url</span> <span class="o">=</span> <span class="s">"https://api.opencode.ai"</span>\n' +
+  '  <span class="k">return</span> <span class="v">url</span><span class="u">.</span><span class="v">length</span> <span class="o">&gt;</span> <span class="n">0</span>\n' +
+  '<span class="u">}</span></div>' +
+  '<blockquote>İpucu: yayına almadan önce dryRun modunu çalıştırın.</blockquote>' +
+  '<ul><li>Önceki sürümü yedekleyin</li><li>Logları denetleyin</li></ul>' +
+  '<hr>' +
+  '</div>' +
+  '</div>' +
+  '<div class="diff">' +
+  '<div class="dhead">api/deploy.ts <span class="plus">+2</span> <span class="minus">−2</span></div>' +
+  '<div class="dl del">-const legacy = true</div>' +
+  '<div class="dl del">-run(pipeline, legacy)</div>' +
+  '<div class="dl add">+const VERSION = "2.1.0"</div>' +
+  '<div class="dl add">+run(pipeline, VERSION)</div>' +
+  '</div>' +
+  '</main>' +
+  '</div>' +
+  '<div class="statusbar">' +
+  '<span class="ok"><i></i>aktif</span>' +
+  '<span class="wn"><i></i>gecikme</span>' +
+  '<span class="er"><i></i>hata</span>' +
+  '<span class="in"><i></i>bilgi</span>' +
+  '</div>' +
+  '</div>';
+}
+function legend(t, c){
+  const rows = LABELS.map(function(p){
+    const raw = t[p[0]];
+    const sw = raw ? '<span class="sw" style="background:' + c[p[0]] + '"></span>'
+                   : '<span class="sw off"></span>';
+    return '<span class="lrow">' + sw + p[1] + '<code>' + (raw || '—') + '</code></span>';
+  }).join('');
+  return '<div class="legend">' + rows + '</div>';
+}
+function card(t){
+  const c = resolve(t);
+  const vars = VARS.map(function(k){ return '--' + k + ':' + c[k]; }).join(';') + ';--sco:' + (t.sc ? 1 : 0.6);
+  return '<div class="card" style="' + vars + '">' +
+    '<div class="chead"><span class="tname">' + t.name + '</span><code>' + c.bg + '</code><span class="gid">' + t.id + '</span></div>' +
+    mock() +
+    legend(t, c) +
+    '</div>';
+}
+const black = THEMES.filter(function(t){ return t.g === 'black'; });
+const color = THEMES.filter(function(t){ return t.g === 'color'; });
+document.getElementById('root').innerHTML =
+  '<h2 class="sec">Arka planı siyah / koyu gri <span>· ' + black.length + ' tema</span></h2>' +
+  '<div class="grid">' + black.map(card).join('') + '</div>' +
+  '<h2 class="sec">Arka planı renkli <span>· ' + color.length + ' tema</span></h2>' +
+  '<div class="grid">' + color.map(card).join('') + '</div>';
+</script>
+</body>
+</html>
