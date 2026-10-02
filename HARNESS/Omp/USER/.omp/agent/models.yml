@@ -1,0 +1,7 @@
+providers:
+  9router:
+    baseUrl: "http://localhost:20128/v1"
+    api: "openai-completions"
+    apiKey: "sk-f84afbfd56f8c26d-oyxa87-bb31c5fd"
+    discovery:
+          type: proxy # Modelleri /v1/models ucundan çeker

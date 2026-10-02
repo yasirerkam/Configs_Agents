@@ -1,0 +1,11 @@
+modelRoles:
+  {}
+symbolPreset: unicode
+composer:
+  shape: pi
+theme:
+  dark: titanium
+setupVersion: 2
+hideThinkingBlock: true
+dev:
+  autoqaConsent: granted
