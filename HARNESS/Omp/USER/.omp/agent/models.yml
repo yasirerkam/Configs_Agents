@@ -1,7 +1,20 @@
+# omp models.yml - provider and model configuration
+# Reference: docs/models.md
+#
+# Auth resolution for apiKey (per docs/models.md):
+#   "Value is first treated as an environment variable name.
+#    If no env var exists, the literal string is used as the token."
+
 providers:
+  # apiKey resolves as env var first (XXX_API_KEY), then falls back to
+  # the literal string. Set XXX_API_KEY in your environment or
+  # ~/.omp/agent/.env to activate this provider; until then it stays
+  # registered but unauthenticated.
+
   9router:
     baseUrl: "http://localhost:20128/v1"
     api: "openai-completions"
-    apiKey: "sk-f84afbfd56f8c26d-oyxa87-bb31c5fd"
+    authHeader: true
+    apiKey: 9ROUTER_API_KEY
     discovery:
           type: proxy # Modelleri /v1/models ucundan çeker

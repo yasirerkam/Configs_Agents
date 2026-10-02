@@ -1,5 +1,4 @@
 # omp models.yml - provider and model configuration
-# Generated from OpenCode opencode.jsonc (OpenWebUI + LiteLLM-glm-5.2)
 # Reference: docs/models.md
 #
 # Auth resolution for apiKey (per docs/models.md):
@@ -7,52 +6,25 @@
 #    If no env var exists, the literal string is used as the token."
 
 providers:
-  # --- OpenWebUI gateway (primary; key auto-refreshed by Update-OpenWebUIKey.ps1 (hourly via Scheduled Task)) ---
-  # Source: opencode.jsonc -> provider.OpenWebUI-yeo
-  # baseURL: https://gpt.ehsim.net/api/v1
-  # model:  glm-5.2 (served as glm-5.2-nvfp4 upstream)
-  #
-  # apiKey resolves as env var first (OPENWEBUI_API_KEY), then falls back to
-  # the literal string. Set OPENWEBUI_API_KEY in your environment or
+  # apiKey resolves as env var first (XXX_API_KEY), then falls back to
+  # the literal string. Set XXX_API_KEY in your environment or
   # ~/.omp/agent/.env to activate this provider; until then it stays
   # registered but unauthenticated.
+
+  # --- OpenWebUI gateway (primary; key auto-refreshed by Update-OpenWebUIKey.ps1 (hourly via Scheduled Task)) ---
   OpenWebUI-yeo:
     baseUrl: https://gpt.ehsim.net/api/v1
-    apiKey: OPENWEBUI_API_KEY
     api: openai-completions
+    apiKey: OPENWEBUI_API_KEY
     authHeader: true
-    models:
-      - id: glm-5.2
-        name: GLM 5.2 (OpenWebUI)
-        reasoning: true
-        input: [text]
-        contextWindow: 262144
-        maxTokens: 32000
-        cost:
-          input: 0
-          output: 0
-          cacheRead: 0
-          cacheWrite: 0
+    discovery:
+          type: proxy # Modelleri /v1/models ucundan çeker
 
   # --- LiteLLM gateway (verified working) ---
-  # Source: opencode.jsonc -> provider.LiteLLM-yeo
-  # baseURL: http://10.0.0.188:4000/v1
-  # model:  glm-5.2
-  # apiKey: LITELLM_API_KEY (resolved from ~/.omp/agent/.env)
   LiteLLM-yeo:
     baseUrl: http://10.0.0.188:4000/v1
     apiKey: LITELLM_API_KEY
     api: openai-completions
     authHeader: true
-    models:
-      - id: glm-5.2
-        name: GLM 5.2 (LiteLLM)
-        reasoning: true
-        input: [text]
-        contextWindow: 262144
-        maxTokens: 32000
-        cost:
-          input: 0
-          output: 0
-          cacheRead: 0
-          cacheWrite: 0
+    discovery:
+          type: proxy # Modelleri /v1/models ucundan çeker
