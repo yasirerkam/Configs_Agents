@@ -209,5 +209,19 @@ omp \--smol openai/gpt-4o-mini \--slow anthropic/claude-3-7-sonnet \--plan anthr
 
 **Dokümantasyon klasörü:** https://github.com/can1357/oh-my-pi/tree/main/docs
 
+Öne çıkanlar:
+
 - `docs/models.md` — `models.yml` / `models.yaml` sağlayıcı-model yapılandırması: env var auth çözümlemesi (`apiKey` önce ortam değişkeni adı olarak okunur, yoksa literal token olur), `discovery`, `compat`, merge sırası, command-resolved secrets (`!komut`)
-- `docs/compaction.md` — Context compaction (uzak/sıkıştırma) seçenekleri
+- `docs/environment-variables.md` — env yükleme sırası, sağlayıcı kimlik değişkenleri, proxy yönlendirme
+- `docs/compaction.md` — context compaction seçenekleri
+
+Tüm docs dizini (2026-10 itibarıyla, 82 dosya):
+
+- **Model & sağlayıcı:** `adding-a-provider.md`, `models.md`, `local-models.md`, `providers.md`, `provider-compat-reference.md`, `provider-endpoint-constraints.md`, `provider-quirks.md`, `provider-streaming-internals.md`, `compaction.md`, `non-compaction-retry-policy.md`, `environment-variables.md`, `secrets.md`
+- **Oturum & bellek:** `session.md`, `session-operations-export-share-fork-resume.md`, `session-switching-and-recent-listing.md`, `session-tree-plan.md`, `context-files.md`, `memory.md`, `mnemosyne-memory-backend.md`, `handoff-generation-pipeline.md`, `tree.md`
+- **Araçlar & çalışma zamanı:** `bash-tool-runtime.md`, `notebook-tool-runtime.md`, `resolve-tool-runtime.md`, `python-repl.md`, `computer-use.md`, `custom-tools.md`, `lsp-config.md`, `fs-scan-cache-architecture.md`, `prewalk.md`, `ai-schema-normalize.md`, `stream.md`
+- **MCP & eklenti/uzantı:** `mcp-config.md`, `mcp-protocol-transports.md`, `mcp-runtime-lifecycle.md`, `mcp-server-tool-authoring.md`, `extensions.md`, `extension-loading.md`, `plugin-manager-installer-plumbing.md`, `hooks.md`, `task-agent-discovery.md`, `agent-hub.md`, `marketplace.md`, `advisor-watchdog.md`, `skills.md`, `system-prompt-customization.md`
+- **TUI & tema:** `tui.md`, `tui-core-renderer.md`, `tui-runtime-internals.md`, `theme.md`, `keybindings.md`, `magic-keywords.md`, `slash-command-internals.md`, `vibe-mode.md`
+- **Kimlik & güvenlik:** `approval-mode.md`, `auth-broker-gateway.md`, `install-id.md`, `macos-signing-notarization.md`
+- **CLI & yapılandırma:** `cli-reference.md`, `config-usage.md`, `settings.md`, `rpc.md`, `sdk.md`, `omptype-guide.md`, `collab.md`, `gemini-manifest-extensions.md`, `ERRATA-GPT5-HARMONY.md`
+- **Natives & iç mimari:** `native-crates.md`, `natives-architecture.md`, `natives-addon-loader-runtime.md`, `natives-binding-contract.md`, `natives-build-release-debugging.md`, `natives-media-system-utils.md`, `natives-rust-task-cancellation.md`, `natives-shell-pty-process.md`, `natives-text-search-pipeline.md`, `blob-artifact-architecture.md`, `rulebook-matching-pipeline.md`, `ttsr-injection-lifecycle.md`, `porting-from-pi-mono.md`, `porting-to-natives.md`, `user-facing-packages.md`

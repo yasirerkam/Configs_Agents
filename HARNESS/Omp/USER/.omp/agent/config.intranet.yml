@@ -19,12 +19,6 @@ defaultThinkingLevel: max
 symbolPreset: unicode
 composer:
   shape: claude
-  tokenRate: false
 theme:
   dark: titanium
-  light: light
 setupVersion: 2
-statusLine:
-  preset: default
-  separator: powerline-thin
-  contextLine: embedded

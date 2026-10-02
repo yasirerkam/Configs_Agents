@@ -2,7 +2,7 @@ modelRoles:
   {}
 symbolPreset: unicode
 composer:
-  shape: pi
+  shape: claude
 theme:
   dark: titanium
 setupVersion: 2
