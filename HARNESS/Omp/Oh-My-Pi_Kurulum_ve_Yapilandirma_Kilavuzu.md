@@ -200,3 +200,14 @@ omp \--smol openai/gpt-4o-mini \--slow anthropic/claude-3-7-sonnet \--plan anthr
 - **Versiyon Kontrolü:**  
     
   omp \--version
+
+---
+
+## 9\. Resmî Dokümantasyon (Referanslar)
+
+**GitHub deposu:** https://github.com/can1357/oh-my-pi
+
+**Dokümantasyon klasörü:** https://github.com/can1357/oh-my-pi/tree/main/docs
+
+- `docs/models.md` — `models.yml` / `models.yaml` sağlayıcı-model yapılandırması: env var auth çözümlemesi (`apiKey` önce ortam değişkeni adı olarak okunur, yoksa literal token olur), `discovery`, `compat`, merge sırası, command-resolved secrets (`!komut`)
+- `docs/compaction.md` — Context compaction (uzak/sıkıştırma) seçenekleri
