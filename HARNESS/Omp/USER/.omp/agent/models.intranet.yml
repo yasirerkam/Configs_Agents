@@ -15,16 +15,16 @@ providers:
   OpenWebUI-yeo:
     baseUrl: https://gpt.ehsim.net/api/v1
     api: openai-completions
-    apiKey: OPENWEBUI_API_KEY
     authHeader: true
+    apiKey: OPENWEBUI_API_KEY
     discovery:
           type: proxy # Modelleri /v1/models ucundan çeker
 
-  # --- LiteLLM gateway (verified working) ---
+  # --- LiteLLM gateway ---
   LiteLLM-yeo:
     baseUrl: http://10.0.0.188:4000/v1
-    apiKey: LITELLM_API_KEY
     api: openai-completions
     authHeader: true
+    apiKey: LITELLM_API_KEY
     discovery:
           type: proxy # Modelleri /v1/models ucundan çeker
