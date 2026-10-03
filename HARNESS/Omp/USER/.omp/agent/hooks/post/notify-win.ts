@@ -62,14 +62,14 @@ if ($show) {
 		if (event?.toolName !== "ask") return;
 		const q = event?.input?.questions?.[0]?.question;
 		const detail = String(typeof q === "string" && q.trim() ? q : "(soru metni yok)").split("\n")[0].trim();
-		await toast("OMP — ASK?", "seçim bekleniyor", detail.slice(0, 120));
+		await toast("OMP — ASK?", "Seçim bekleniyor!", detail.slice(0, 120));
 	});
 
 	// A tool needs permission: same parking, announce with the tool name.
 	pi.on("tool_approval_requested", async (event, ctx) => {
 		if (!ctx?.hasUI) return; // headless runs: no toast
 		const tool = String(event?.toolName ?? "").trim() || "tool";
-		await toast("OMP — APPROVAL?", "onay bekleniyor", tool.slice(0, 120));
+		await toast("OMP — APPROVAL?", "Onay bekleniyor!", tool.slice(0, 120));
 	});
 
 	pi.on("session_stop", async (event, ctx) => {
