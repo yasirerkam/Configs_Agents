@@ -10,16 +10,17 @@ dev:
 advisor:
   enabled: true
 defaultThinkingLevel: max
+# modelRoles: niyet (intent) bazlı model eşlemesi; format `provider/model:thinkingLevel`
 modelRoles:
-  default: OpenWebUI/glm-5.2:max
-  smol: OpenWebUI-yeo/glm-5.2
-  slow: OpenWebUI-yeo/glm-5.2:max
-  vision: OpenWebUI-yeo/glm-5.2:max
-  plan: OpenWebUI-yeo/glm-5.2:max
-  commit: OpenWebUI-yeo/glm-5.2
-  tiny: OpenWebUI-yeo/glm-5.2
-  task: OpenWebUI-yeo/glm-5.2:max
-  advisor: OpenWebUI-yeo/glm-5.2:medium
+  default: OpenWebUI/glm-5.2:max # Ana oturum, normal interaktif iş
+  smol: OpenWebUI-yeo/glm-5.2 # Hızlı/ucuz yardımcı işler; prewalk'in teslim hedefi
+  slow: OpenWebUI-yeo/glm-5.2:max # Derin akıl yürütme, zor inceleme (gecikme kabul edilirse)
+  vision: OpenWebUI-yeo/glm-5.2:max # Görüntü/ekran görüntüsü analizi
+  plan: OpenWebUI-yeo/glm-5.2:max # Plan modunda mimari/tasarım işi
+  commit: OpenWebUI-yeo/glm-5.2 # Commit mesajı üretimi
+  tiny: OpenWebUI-yeo/glm-5.2 # Mikro sınıflandırma, başlık üretimi, hafıza desteği (atanmazsa smol tercihi izler)
+  task: OpenWebUI-yeo/glm-5.2:max # Alt ajan (subagent) işçi kodlayıcı
+  advisor: OpenWebUI-yeo/glm-5.2:medium # Advisor'ın bağımsız denetleyici ikinci modeli (inherited etmez, ayrı güçlü model arar)
 modelProviderOrder:
   - OpenWebUI-yeo
   - LiteLLM-yeo
