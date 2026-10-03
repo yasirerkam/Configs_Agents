@@ -1,3 +1,15 @@
+symbolPreset: unicode
+composer:
+  shape: claude
+theme:
+  dark: titanium
+setupVersion: 2
+hideThinkingBlock: true
+dev:
+  autoqaConsent: denied
+advisor:
+  enabled: true
+defaultThinkingLevel: max
 modelRoles:
   default: OpenWebUI/glm-5.2:max
   smol: OpenWebUI-yeo/glm-5.2
@@ -15,15 +27,3 @@ cycleOrder:
   - smol
   - default
   - slow
-defaultThinkingLevel: max
-symbolPreset: unicode
-composer:
-  shape: claude
-theme:
-  dark: titanium
-setupVersion: 2
-hideThinkingBlock: true
-dev:
-  autoqaConsent: denied
-advisor:
-  enabled: true

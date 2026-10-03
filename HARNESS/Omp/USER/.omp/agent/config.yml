@@ -1,13 +1,3 @@
-modelRoles:
-  default: 9router/ocg/glm-5.3-flash:max
-  smol: 9router/ocg/glm-5.3-flash:max
-  slow: 9router/ocg/glm-5.3-flash:max
-  vision: 9router/ocg/glm-5.3-flash:max
-  plan: 9router/ocg/glm-5.3-flash:max
-  commit: 9router/ocg/glm-5.3-flash:max
-  tiny: 9router/ocg/glm-5.3-flash:max
-  task: 9router/ocg/glm-5.3-flash:max
-  advisor: 9router/ocg/glm-5.3-flash:max
 symbolPreset: unicode
 composer:
   shape: claude
@@ -19,3 +9,14 @@ dev:
   autoqaConsent: denied
 advisor:
   enabled: true
+defaultThinkingLevel: max
+modelRoles:
+  default: 9router/ocg/glm-5.3-flash:max
+  smol: 9router/ocg/glm-5.3-flash:max
+  slow: 9router/ocg/glm-5.3-flash:max
+  vision: 9router/ocg/glm-5.3-flash:max
+  plan: 9router/ocg/glm-5.3-flash:max
+  commit: 9router/ocg/glm-5.3-flash:max
+  tiny: 9router/ocg/glm-5.3-flash:max
+  task: 9router/ocg/glm-5.3-flash:max
+  advisor: 9router/ocg/glm-5.3-flash:max
