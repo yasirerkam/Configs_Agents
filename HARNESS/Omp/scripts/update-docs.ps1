@@ -37,7 +37,7 @@ try {
     if ($newFiles -ne $upFiles) { throw "ayna eksik: $newFiles/$upFiles" }
 
     $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
-    $markerText = "source: $RepoUrl`nbranch: $Branch`nrev: $rev`nfetched: $(Get-Date -Format 'yyyy-MM-dd')`n"
+    $markerText = "source: $RepoUrl`r`nbranch: $Branch`r`nrev: $rev`r`nfetched: $(Get-Date -Format 'yyyy-MM-dd')`r`n"
     [System.IO.File]::WriteAllText($Marker, $markerText, $utf8NoBom)
 
     Write-Host "OK: docs/ guncellendi -> $rev ($newFiles dosya)"
