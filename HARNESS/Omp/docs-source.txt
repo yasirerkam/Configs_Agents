@@ -1,0 +1,4 @@
+source: https://github.com/can1357/oh-my-pi
+branch: main
+rev: 9348320cc4a30a7195d36a1f05a6c11bcb701a17
+fetched: 2026-10-03
