@@ -9,8 +9,8 @@ modelRoles:
   task: OpenWebUI-yeo/glm-5.2:max
   advisor: OpenWebUI-yeo/glm-5.2:medium
 modelProviderOrder:
-  - LiteLLM-yeo
   - OpenWebUI-yeo
+  - LiteLLM-yeo
 cycleOrder:
   - smol
   - default
