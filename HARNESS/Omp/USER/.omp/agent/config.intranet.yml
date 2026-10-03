@@ -23,7 +23,3 @@ modelRoles:
 modelProviderOrder:
   - OpenWebUI-yeo
   - LiteLLM-yeo
-cycleOrder:
-  - smol
-  - default
-  - slow
