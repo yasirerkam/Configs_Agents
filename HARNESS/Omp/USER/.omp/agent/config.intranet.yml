@@ -22,3 +22,4 @@ composer:
 theme:
   dark: titanium
 setupVersion: 2
+hideThinkingBlock: true
