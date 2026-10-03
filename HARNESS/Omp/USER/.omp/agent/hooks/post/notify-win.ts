@@ -20,7 +20,7 @@ export default function (pi) {
 				? event.last_assistant_message
 				: undefined;
 		const isError = lastMsg?.stopReason === "error";
-		const title = isError ? "ERROR!" : "DONE!";
+		const title = isError ? "OMP — ERROR!" : "OMP — DONE!";
 		// First text line of the final assistant message, capped for toast width.
 		const text = (lastMsg?.content ?? [])
 			.filter((b) => b?.type === "text" && typeof b.text === "string")
