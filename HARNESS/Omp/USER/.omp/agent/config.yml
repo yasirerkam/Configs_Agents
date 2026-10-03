@@ -16,6 +16,6 @@ theme:
 setupVersion: 2
 hideThinkingBlock: true
 dev:
-  autoqaConsent: granted
+  autoqaConsent: denied
 advisor:
   enabled: true

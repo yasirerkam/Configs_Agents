@@ -23,3 +23,7 @@ theme:
   dark: titanium
 setupVersion: 2
 hideThinkingBlock: true
+dev:
+  autoqaConsent: denied
+advisor:
+  enabled: true
