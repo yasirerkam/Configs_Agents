@@ -27,16 +27,18 @@ Oh-My-Pi (OMP), terminal-yerel bir yapay zeka kodlama ajanı harness'ıdır.
 
 - **Dual-Model İnceleme:** Ana geliştirici ajan çalışırken, ikinci bir model (`advisor`) her adımı bağımsız bağlamda denetler.  
 - Hata veya sapma algılandığında satır içi uyarı veya engelleyici blok notu düşer.  
-- `/advisor status`, `/advisor on`, `/advisor off` ile yönetilir.
+- `/advisor status`, `/advisor on`, `/advisor off` ile yönetilir. Tam alt komut seti (dump/configure dahil): Bölüm 9-G.
 
 ---
 
 ### 3\. Kod İnceleme ve Canlı Eşli Çalışma
 
-#### A. `/review` ve `/annotate`
+#### A. `/green`, `/review` ve `/annotate`
 
-- **`/review`:** Kod değişikliklerini denetleyen özel alt ajanlar başlatır. Sorunları P0 (kritik) ile P3 (küçük öneri) arasında sınıflandırır.  
-- **`/annotate`:** İnceleme başlamadan önce diff veya yanıtlar üzerine satır bazında not iliştirmeyi sağlar (`/annotate code-review`, `/annotate last`).
+- **`/review`:** Kod değişikliklerini denetleyen özel alt ajanlar başlatır. Sorunları P0 (kritik) ile P3 (küçük öneri) arasında sınıflandırır. Hedef: yerel diff (base branch'e göre) veya GitHub PR (`pr://owner/repo/N`). Diff bir kez çözülüp `ResolvedReviewTarget` olarak dondurulur; overlay ve reviewer prompt'u aynı snapshot'ı okur. **GitHub'a hiçbir şey postalanmaz.**
+- **`/annotate`:** İnceleme başlamadan önce diff veya yanıtlar üzerine satır bazında not iliştirmeyi sağlar (`/annotate code-review`, `/annotate last`). Kaynaklar: `code-review [focus]` (yerel diff veya PR), `last` (son asistan yanıtı), `session` (`/copy` seçicisinden mesaj), dosya yolu, tırnak içinde literal metin. Notlar **composer'a yapıştırılır**, otomatik gönderilmez. Overlay'de "Continue with LLM review" seçilirse notlar `/review`'e odak (focus) olarak gider; etkileşimsiz ortamda `code-review` doğrudan `/review`'e delege olur.
+- **`/green` (ci-green):** "Generate a prompt to iterate on CI failures until the branch is green." Agent'a GitHub Actions hatalı run'larını izleyen, hataları düzelten ve **branch yeşile gelene kadar** tekrarlayan bir döngü prompt'u üretir (`run_watch` izlemesi üzerinden).
+- Üçü de yerleşik kayıtta değil, **bundled custom command** olarak kayıtlıdır (`src/extensibility/custom-commands/bundled/{ci-green,review,annotate}/`) — bkz. Bölüm 9-A.
 
 #### B. Canlı Oturum Paylaşımı (`/collab`)
 
@@ -118,3 +120,82 @@ OMP, mevcut kural dosyalarını dönüştürme gerekmeksizin doğrudan okur:
 - Codex: `AGENTS.md`  
 - GitHub Copilot: `.github/copilot-instructions.md`, `applyTo`  
 - Claude ve VS Code kural tanımları
+
+---
+
+## 9\. Slash Komutları — Tam Envanteri
+
+Ekim 2026 itibarıyla doğrulanmış envanter. Kaynaklar: `docs/` referans dokümanları ve kurulu `omp` (v18.4.10) komut kaydı. Komutlar üç kaynaktan gelir: **yerleşik (built-in)** kayıtlar, **bundled custom commands** (`custom-commands/bundled/*`) ve **dosya komutları** (`commands/*.md` + `commands/` dizinleri).
+
+### A. Kod İnceleme Üçlüsü (`/green`, `/review`, `/annotate`)
+
+Genişletilmiş davranışsal anlatım **Bölüm 3-A**'da (şimdi üçüyle güncellendi). Tamamlama bilgisi: üçü de **bundled custom command** olarak kayıtlıdır (`custom-commands/bundled/{ci-green,review,annotate}/`) — yerleşik registry bloğunda bulunmazlar, bu yüzden envanter taramasında kolay atlanabilirler.
+
+### B. Modlar (birbirini dışlayan)
+
+- **`/plan [prompt]`** — Plan modu toggle: agent planlayıp onaya sunar. `/plan-review` ile son planın inceleme overlay'i yeniden açılır (yalnız plan modunda).
+- **`/vibe`** — Director/worker orkestrasyonu (bkz. Bölüm 2A). `/vibe <prompt>` girip ilk directive'i aynı anda gönderir.
+- **`/goal <objective>`** + alt komutlar:
+  - `/goal set <objective>` — hedefi koy/değiştir
+  - `/goal show` — mevcut hedef detayları
+  - `/goal pause`, `/goal resume`, `/goal drop`
+  - `/goal budget <N|off>` — token bütçesi
+  - Şart: `goal.enabled`, plan modu kapalı; abort edilen goal pause olur, sadece `resume` devam ettirir. Restore edilen goal başlangıçta paused gelir.
+- **`/guided-goal [kaba hedef]`** — Agent önce sohbet içinde seni mülakatla hedefi netleştirir (`guided-goal-interview` şablonu), sonra goal modunu kurar. CLI flag'i yoktur; `--goal` bunun değil `/goal`'un karşılığıdır.
+- `/plan`, `/goal`, `/vibe` karşılıklı dışlanır; pause edilmiş goal bile vibe'ı engeller.
+
+### C. Servis Hızı Katmanları
+
+- **`/fast [on|ultra|off|status]`** — Hızlı servis: OpenAI'a `service_tier: priority` (kodex destekliyse `ultrafast`), direct Anthropic'e `speed: fast`, Google'a `priority`. `tier.*` ayarlarının UI karşılığı.
+- **`/slow [on|off|status]`** — Yavaş/ucuz servis: OpenAI/Google'da **flex tier**; direct Anthropic'te 5 saatlik abonelik limitine ulaşıldığında **düşük öncelikli şeritten devam etme** izni (`providers.anthropic.slowMode` ayarı). `/slow auto` = "OpenAI/Google'da flex; Anthropic'te limit sonrası düşük öncelikli şerit". `modelRoles.slow` ile karıştırılmamalı — rol, derin muhakemede kullanılan ikinci modeldir; komut ise şerit seçimidir.
+
+### D. Model Yönetimi
+
+Kalıcı rol konfigürasyonu ve başlatma bayrakları: Bölüm 5-A / 5-B. Oturum içi komutlar:
+- **`/model`** — Model seçim arayüzü (Roles görünümü dahil; `Ctrl+P` cycleOrder'da döner).
+- **`/smodel`** — Sadece bu oturum için model değiştir (persist etmez).
+- **`/modelpreset [list|save|switch|delete] [name]`** — Rol modelleri + thinking seviyesini preset olarak kaydet/uygula.
+- **`/queue <message>`** — Agent yield ettikten sonrasına mesaj kuyruklar.
+- **`/loop [count|duration] [--while|--until '<cmd>'] [prompt]`** — Koşullu/tekrarlı turn döngüsü.
+- **`/prewalk` / `/prewalk restart`** — Tek atımlık handoff arm/disarm: aktif model → `@smol`; restart `@default`'a dönüp yeniden silahlandırır (AYRINTI: prewalk.md).
+
+### E. Oturum İşlemleri
+
+| Komut | Etki |
+| --- | --- |
+| `/new` | Boş yeni konuşma |
+| `/fresh` | Provider tarafı kimliği tazele, dosya/kimliği koru |
+| `/clear` | Canlı/model konuşma bağlamını temizle |
+| `/delete` | Oturumu sil, yenisine geç |
+| `/fork` | Aktif oturumdan kopya oluştur ve geç |
+| `/resume [id\|@claude\|@codex]` | Oturuma dön veya dışarıdan içe aktar |
+| `/restart` | Süreci yeniden başlat |
+| `/export [--themes] [yol]` | Oturumu dışa aktar |
+| `/share` | Şifreli paylaşım linki üret |
+| `/copy` | Görüntülenebilir mesaj seçicide kopyala/annotate kaynağı |
+
+### F. Yardımcı Yerleşikler
+
+- **`/pause`** (sadece TUI) — Tüm agent'ları (main + subagent + advisor) global duraklat; akış güvenli sınırda biter, hiçbir şey iptal edilmez. Esc/Enter/Space/Ctrl+C ile devam.
+- **`/btw <soru>`** — İzlenen oturum hakkında bağımsız yan soru: kendi transcript'ine karışmaz, kendi konuşma kimliğiyle koşar. Boş `/btw` geçmişini açar; `Esc` çalışanı iptal eder.
+
+### G. Araç ve Özellik Toggle'ları
+
+- **`/advisor [on|off|status|dump [raw]|configure]`** — Danışman alt sistemi: her turu pasif inceleyen ikinci model. `configure` etkileşimli `WATCHDOG.yml` editörü açar. Oturum kapsamlıdır, config'e yazmaz.
+- **`/skills`** — Sistem prompt'unda skill listesi gösterme/gizleme (yalnız oturum).
+- **`/skill:<name> [args]`** — Skill içeriğini custom message olarak enjekte eder (`skills.enableSkillCommands`).
+- **`/extended-context`** — Genişletilmiş bağlam penceresi toggle.
+- **`/computer` [on|off|status]** — Native computer-use eval prelude toggle.
+- **`/memory [view|stats|diagnose|queue|sync|clear|enqueue|rebuild|mm …]`** — Hafıza arka ucu idamesi (mm sadece Hindsight; ACP'de yok).
+- **`/mcp`** — MCP sunucu yönetimi; `/mcp add` kurulum sihirbazıyla ekler.
+- **`/collab`** — Canlı oturum paylaşımı (Bölüm 3B).
+- **`/share`** — Şifreli oturum blob'u paylaş (share sunucu veya secret gist).
+
+### H. Dosya ve Kural Komutları
+
+- `commands/*.md` — proje/kullanıcı dizinlerindeki dosya komutları; komuttan sonraki tüm metin `rawArgs` olarak komuta geçer (slash-command-internals.md §6).
+- Kural komutları `rules/*.{md,mdc}` ve kök `RULES.md` komut değildir; kalıcı prompt'a gider.
+- Profil dizinleri (`~/.omp/profiles/<name>/`) komutları kendi kökünden çeker.
+- RPC/ACP istemcileri yerleşikler ve bundled komutlara erişir; UI-only overlay tabanlı olanlar (`/plan-review`, `/advisor configure`) TUI'a mahsustur.
+
+> Not: `security` alt komut kümesi (`plan|scan|status|cancel|scans|show|import|export|validate|compare|disposition`) binary komut kaydında `omp` alt komutu imzasıyla kayıtlı; vendor dokümanlarda TUI slash `/security` olarak ayrıca belgelenmiyor — inceleme çıktıları `security://` kaynağı okunarak görüntülenir (tools/security_scan.md).
