@@ -171,8 +171,8 @@ Kalıcı rol konfigürasyonu ve başlatma bayrakları: Bölüm 5-A / 5-B. Oturum
 | `/resume [id\|@claude\|@codex]` | Oturuma dön veya dışarıdan içe aktar |
 | `/restart` | Süreci yeniden başlat |
 | `/export [--themes] [yol]` | Oturumu dışa aktar |
-| `/share` | Şifreli paylaşım linki üret |
-| `/copy` | Görüntülenebilir mesaj seçicide kopyala/annotate kaynağı |
+| `/share` | Şifreli paylaşım linki üret (share sunucusu veya authenticated `gh` ile secret gist; gist başarısızsa share sunucusuna düşer) |
+| `/copy` | Konuşmadan metin/kod seçicisi aç; `/annotate session` ve "son linki aç" akışı bunu kaynaştırır |
 
 ### F. Yardımcı Yerleşikler
 
@@ -187,9 +187,13 @@ Kalıcı rol konfigürasyonu ve başlatma bayrakları: Bölüm 5-A / 5-B. Oturum
 - **`/extended-context`** — Genişletilmiş bağlam penceresi toggle.
 - **`/computer` [on|off|status]** — Native computer-use eval prelude toggle.
 - **`/memory [view|stats|diagnose|queue|sync|clear|enqueue|rebuild|mm …]`** — Hafıza arka ucu idamesi (mm sadece Hindsight; ACP'de yok).
-- **`/mcp`** — MCP sunucu yönetimi; `/mcp add` kurulum sihirbazıyla ekler.
-- **`/collab`** — Canlı oturum paylaşımı (Bölüm 3B).
-- **`/share`** — Şifreli oturum blob'u paylaş (share sunucu veya secret gist).
+- **`/mcp <alt>`** — MCP sunucu yönetimi; alt komutlar: `add` (interactive wizard), `add <name> [--scope project|user] [--url <url> --transport http|sse] [--token <token>] [-- <command...>]`, `list`, `remove <name>`, `test <name>`, `reauth <name>`, `unauth <name>`, `enable <name>`, `disable <name>`, `smithery-search <keyword> [--semantic]`, `smithery-login`, `smithery-logout`, `reconnect <name>`, `reload`, `resources`, `prompts`, `notifications`, `help`.
+- **`/collab [start|view|list|stop|status] [relayUrl]`** — Canlı paylaşım: şifreli röle linki + QR; `view` salt-okunur izleyici linki, `list` yerel host listesi (link yok; `omp collab link` kullanılır), `status` link + katılımcılar, `stop` paylaşımı durdurur; bölüm ayrıca host tarafını **katılma** (`<link>`) ve **ayrılma** alt komutlarıyla yönetir.
+- **Transcript/izleme komutları** — oturum transcript'ini panoya kopyalama (LLM istek JSON'unu tmp'ye yazar) ve oturum izini istatistik panelinde açma; komut adları registry'de biçimsel olarak çözülemedi, davranışlar binary'den doğrulandı.
+- **Browser prelude headless/visible toggle** — tarayıcı ön ucunun görünür/headless modunu oturum bazında değiştirir; komut adı registry'de biçimsel olarak çözülemedi.
+- **`/settings`** — Ayarlar menüsünü açar (binary: "Open settings menu"). Ayar değişiklikleri oturumda anında geçerli olur.
+- **`/login [provider]` / `/logout`** — OAuth/API-key kimlik seçici; `/login <provider>` doğrudan o sağlayıcıya atlar, callback'i `omp login <redirect-url>` ile tamamlanabilir (providers.md).
+- **`/usage`** — Abonelik/quota kullanımı raporlar (`omp usage` CLI'ının oturum içi karşılığı; cli-reference.md `usage` satırı).
 
 ### H. Dosya ve Kural Komutları
 
