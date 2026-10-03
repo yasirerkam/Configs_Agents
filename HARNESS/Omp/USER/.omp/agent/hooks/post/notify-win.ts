@@ -12,6 +12,7 @@
 //   dialog is answered, so session_stop never fires while it waits.
 // - tool_approval_requested: approval prompts park the same way; this fires
 //   only when a call actually needs a decision.
+import { platform } from "node:os";
 export default function (pi) {
 	let startedAt = 0;
 	pi.on("agent_start", () => {
@@ -19,6 +20,20 @@ export default function (pi) {
 	});
 
 	const toast = async (title, line2, line3) => {
+		if (platform() !== "win32") {
+			// Linux/desktop: notify-send (same target as omp's built-in Linux fallback).
+			// Focus guard omitted: compositor notifications are non-intrusive there.
+			try {
+				await pi.exec("notify-send", [
+					"-a", "OMP",
+					"-u", "normal",
+					"-t", "5000",
+					`${title} — ${line2}`,
+					line3,
+				], { signal: AbortSignal.timeout(5000) });
+			} catch { /* notify-send unavailable -> silent */ }
+			return;
+		}
 		const t64 = Buffer.from(title, "utf8").toString("base64");
 		const a64 = Buffer.from(line2, "utf8").toString("base64");
 		const b64 = Buffer.from(line3, "utf8").toString("base64");
