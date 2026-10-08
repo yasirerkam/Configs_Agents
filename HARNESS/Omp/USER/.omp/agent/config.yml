@@ -20,4 +20,4 @@ modelRoles:
   slow:    9router/ocg/mimo-v2.6-pro:high # Derin akıl yürütme, zor inceleme (gecikme kabul edilirse)
   plan:    9router/ocg/mimo-v2.6-pro:high # Plan modunda mimari/tasarım işi
   advisor: 9router/ocg/glm-5.3-flash:max # Advisor'ın bağımsız denetleyici ikinci modeli (inherited etmez, ayrı güçlü model arar)
-  task:    9router/ocg/mimo-v2.6-pro:high # Alt ajan (subagent) işçi kodlayıcı
+  task:    9router/ocg/glm-5.3-flash:max # Alt ajan (subagent) işçi kodlayıcı
