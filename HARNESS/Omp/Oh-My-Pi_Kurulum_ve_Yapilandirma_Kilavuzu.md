@@ -7,7 +7,8 @@ Oh-My-Pi (OMP), terminal-yerel çalışan, IDE düzeyinde araçlarla donatılmı
 - **İşletim Sistemleri:** macOS (Intel & Apple Silicon), Linux (x86\_64, aarch64), Windows (WSL gerektirmeden yerel çalışabilir).  
 - **Çalışma Zamanı (Opsiyonel):** Paket yöneticisi ile kurulum için Bun (\>= 1.3.14) veya Node.js (\>= 18).  
 - **Git** ve temel derleme araçları.  
-- Desteklenen bir LLM sağlayıcısından geçerli API anahtarı (OpenAI, Anthropic, DeepSeek, xAI vb.).
+- Desteklenen bir LLM sağlayıcısından geçerli API anahtarı (OpenAI, Anthropic, DeepSeek, xAI vb.).  
+- **Terminal yazı tipi (Windows):** OMP TUI ikonları için kurulu bir Nerd Font ve Windows Terminal `settings.json` ayarı gerekir — bkz. [Oh-My-Pi\_Terminal\_Nerd\_Font\_Notu.md](./Oh-My-Pi_Terminal_Nerd_Font_Notu.md).
 
 ---
 
