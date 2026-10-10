@@ -104,6 +104,28 @@ Kaynak: `USER/.omp/agent/config.yml`, `HARNESS/Omp/docs/theme.md`, `HARNESS/Omp/
 4. Hâlâ bozuksa: `face` adı kurulu adla eşleşmiyor ya da font kurulumu için terminal yeniden
    başlatılmadı.
 
+## 5. Repo kopyası
+
+Ayarın bilinen-iyi hali OMP ajan klasöründe saklanır:
+
+```
+HARNESS/Omp/USER/.omp/agent/settings.json
+```
+
+Bu yol, `C:\Users\<kullanıcı>\.omp\agent\` klasörünün repodaki eşidir — Windows Terminal bu
+dosyayı kendiliğinden okumaz, saklanan bir kopyadır. Uygulamak için gerçek konuma kopyala
+(repo kökünden):
+
+```powershell
+Copy-Item .\HARNESS\Omp\USER\.omp\agent\settings.json `
+  "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+```
+
+Dosya UTF-8 (BOM yok) ve LF satır sonludur; canlı dosyayla bayt bayt aynıdır.
+
+`JetBrainsMono NFM` bu kurulumda kayıtlı bir aile adıdır (kayıt defteri: `JetBrainsMono NFM
+Regular/Bold/Italic/...`), dolayısıyla `face` değeri olduğu gibi geçerlidir.
+
 ## Referanslar
 
 - Nerd Fonts: https://github.com/ryanoasis/nerd-fonts (NFM = Nerd Font Mono)
